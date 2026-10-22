@@ -1,0 +1,1632 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 影片運鏡提示詞大全</title>
+<meta name="description" content="用動態預覽看懂每一種運鏡，一鍵複製英文提示詞，直接貼到 Veo、Kling、Runway 等影片生成 AI。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#0d0e12;--bg2:#15171d;--card:#181a21;--line:#262932;--tx:#eceef3;--mut:#9aa0ae;--ac:#ffb547;--ac2:#ff7a45;--ok:#5ad19a;--r:14px;--sh:0 10px 30px rgba(0,0,0,.35)}
+:root[data-theme=light]{--bg:#f5f3ee;--bg2:#ece9e1;--card:#fff;--line:#ddd8cc;--tx:#1d1e22;--mut:#666b78;--ac:#d9790b;--ac2:#c2410c;--sh:0 10px 30px rgba(60,50,30,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:128px}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.65 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--ac)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+.en{font-family:"Space Grotesk","Noto Sans TC",system-ui,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#1a1206;font-style:normal;font-weight:800}
+.iconbtn{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:7px 12px;color:var(--mut)}
+.iconbtn:hover{color:var(--tx);border-color:var(--mut)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;padding:14px 0 34px}
+.hero h1{font-size:clamp(28px,4.2vw,46px);line-height:1.2;margin:0 0 14px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:var(--mut);margin:0 0 20px;max-width:34em}
+.stats{display:flex;gap:22px;flex-wrap:wrap;margin:0 0 22px}
+.stats b{display:block;font-size:26px;line-height:1.1;font-family:"Space Grotesk",sans-serif}
+.stats span{font-size:12.5px;color:var(--mut)}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--bg2);border-radius:11px;padding:9px 16px;font-weight:600;display:inline-flex;align-items:center;gap:7px;transition:.15s}
+.btn:hover{border-color:var(--mut)}
+.btn.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));border-color:transparent;color:#1a1206}
+.btn.pri:hover{filter:brightness(1.07)}
+.btn.sm{padding:6px 11px;font-size:13px;border-radius:9px}
+.btn.on{border-color:var(--ac);color:var(--ac)}
+.stage{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sh);background:#000;border:1px solid var(--line)}
+canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#1b1a22}
+.stage .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;pointer-events:none}
+.stage .cap b{font-size:17px}.stage .cap small{opacity:.75;margin-left:8px}
+.heroinfo{margin-top:10px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.heroinfo code{font-size:12.5px;color:var(--mut);flex:1;min-width:220px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* toolbar */
+.bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .row{display:flex;gap:10px;align-items:center;padding:10px 0;flex-wrap:wrap}
+.search{position:relative;flex:1;min-width:200px}
+.search input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:9px 38px 9px 36px;outline:none}
+.search input:focus{border-color:var(--ac)}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.55}
+.search kbd{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;border:1px solid var(--line);border-radius:5px;padding:0 6px;color:var(--mut)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:0 0 10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap;background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:13.5px;color:var(--mut)}
+.chip:hover{color:var(--tx)}.chip.on{background:var(--ac);border-color:var(--ac);color:#1a1206;font-weight:700}
+.chip small{opacity:.7;margin-left:4px}
+select.sel{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.badge{background:var(--ac);color:#1a1206;border-radius:99px;font-size:11px;font-weight:800;padding:0 6px;margin-left:2px}
+/* sections & cards */
+.sec{padding:34px 0 6px}
+.sec h2{margin:0;font-size:22px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sec h2 small{font-size:13px;color:var(--mut);font-weight:500}
+.sec p.d{margin:4px 0 16px;color:var(--mut);max-width:60em}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(var(--min,290px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--ac) 55%,var(--line));box-shadow:var(--sh)}
+.card .pv{position:relative;cursor:pointer;background:#000}
+.card .pv .tag{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#fff;border-radius:7px;font-size:11px;padding:1px 8px;backdrop-filter:blur(4px)}
+.card .pv .pp{position:absolute;right:8px;top:8px;background:rgba(0,0,0,.55);color:#fff;border-radius:99px;width:26px;height:26px;display:grid;place-items:center;font-size:11px;opacity:0;transition:.15s}
+.card:hover .pp{opacity:1}
+.card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{margin:0;font-size:16px;line-height:1.35}
+.card h3 small{display:block;font-size:12.5px;color:var(--mut);font-weight:500;font-family:"Space Grotesk",sans-serif}
+.card p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ft{margin-top:auto;padding-top:8px;display:flex;gap:6px;align-items:center}
+.card .ft .btn{flex:1;justify-content:center}
+.int{display:inline-flex;gap:3px;vertical-align:middle}
+.int i{width:6px;height:6px;border-radius:50%;background:var(--line)}.int i.on{background:var(--ac)}
+.favb.on{color:#ff5a7a;border-color:#ff5a7a}
+.empty{text-align:center;color:var(--mut);padding:70px 0}
+/* guide */
+.guide{padding:50px 20px 10px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0 26px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.step b.n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ac);color:#1a1206;font-size:13px;margin-bottom:8px}
+.step h4{margin:0 0 4px}.step p{margin:0;color:var(--mut);font-size:14px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.box h4{margin:0 0 8px}.box ul{margin:0;padding-left:1.2em;color:var(--mut);font-size:14px}.box li{margin:4px 0}
+.pairs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+footer{margin-top:60px;border-top:1px solid var(--line);padding:26px 0 50px;color:var(--mut);font-size:13px}
+/* dialogs */
+dialog{border:1px solid var(--line);background:var(--bg);color:var(--tx);border-radius:18px;padding:0;max-width:min(1060px,96vw);width:100%;max-height:94vh;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(5,6,9,.72);backdrop-filter:blur(3px)}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+.dh .nav{display:flex;gap:6px}
+.dm{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;padding:18px}
+.ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.ctl input[type=range]{flex:1;min-width:140px;accent-color:var(--ac)}
+.tgl{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:12.5px;color:var(--mut)}
+.tgl.on{color:var(--ac);border-color:var(--ac)}
+.dm h2{margin:0 0 2px;font-size:24px}
+.dm .en2{color:var(--mut);margin-bottom:10px}
+.kv{margin:10px 0;font-size:14px}.kv b{display:inline-block;min-width:4.5em;color:var(--mut);font-weight:600}
+.tabs{display:flex;gap:6px;margin:14px 0 8px}
+.tab{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:3px 12px;font-size:13px;color:var(--mut)}
+.tab.on{color:#1a1206;background:var(--ac);border-color:var(--ac);font-weight:700}
+.pbox{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.pbox .lb{font-size:11.5px;color:var(--mut);letter-spacing:.08em;margin-bottom:3px;display:flex;justify-content:space-between;align-items:center}
+.pbox .tx{font-size:14px}
+.pbox.en .tx{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--tx);word-break:break-word}
+.tip{background:color-mix(in srgb,var(--ac) 12%,transparent);border:1px solid color-mix(in srgb,var(--ac) 40%,var(--line));border-radius:12px;padding:10px 13px;font-size:14px;margin:10px 0}
+.vs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.foot2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+/* builder */
+.bd2{padding:18px;display:grid;gap:14px}
+.fld label{display:block;font-size:13px;color:var(--mut);margin-bottom:4px}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 11px;outline:none}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--ac)}
+.f2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.mvlist{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.mvi{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.mvi span.no{color:var(--ac);font-weight:800;width:1.3em}
+.mvi .x{margin-left:auto;display:flex;gap:4px}
+.out{background:#0a0b0e;color:#f3e7cf;border:1px solid var(--line);border-radius:12px;padding:14px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;line-height:1.7;min-height:72px;white-space:pre-wrap;word-break:break-word}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px}
+.toast{border:0;margin:0;inset:auto;position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:var(--ac);color:#1a1206;font-weight:700;padding:9px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:.25s;z-index:999;box-shadow:var(--sh)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.dm{grid-template-columns:1fr}.cmp{grid-template-columns:1fr}.f2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+
+a.btn{text-decoration:none;color:inherit}a.btn.pri{color:#1a1206}
+@media(max-width:600px){.stage .cap small{display:none}.wrap{padding:0 14px}.logo span{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header class="top">
+  <div class="logo"><i>▶</i><span>AI 影片運鏡提示詞大全</span></div>
+  <div style="display:flex;gap:8px">
+   <button class="iconbtn" id="bBuild">✎ 組合器 <span class="badge" id="bCnt" hidden>0</span></button>
+   <button class="iconbtn" id="bTheme" aria-label="切換亮暗主題">亮／暗</button>
+  </div>
+ </header>
+ <section class="hero">
+  <div>
+   <h1>看得到的運鏡，<br><em>貼上就能用</em>的提示詞</h1>
+   <p class="lead">每一種運鏡都有「實際動態預覽」，旁邊附上可直接複製的英文提示詞與台灣華語解說。貼到 Veo、Kling、Runway 等影片生成 AI，就能做出你想要的鏡頭。</p>
+   <div class="stats"><div><b id="sN">58</b><span>種運鏡</span></div><div><b id="sC">9</b><span>個分類</span></div><div><b>EN + 繁中</b><span>雙語提示詞</span></div></div>
+   <div class="hbtns"><a class="btn pri" href="#list">開始瀏覽 ↓</a><button class="btn" id="bRand">🎲 隨機來一個</button><a class="btn" href="#guide">使用說明</a></div>
+  </div>
+  <div>
+   <div class="stage"><canvas id="heroCv" width="800" height="450"></canvas><div class="cap"><b id="hName"></b><small class="en" id="hEn"></small></div></div>
+   <div class="heroinfo"><code id="hP"></code><div style="display:flex;gap:6px"><button class="btn sm pri" id="hCopy">複製提示詞</button><button class="btn sm" id="hOpen">看詳情</button></div></div>
+  </div>
+ </section>
+</div>
+<div class="bar" id="list">
+ <div class="wrap">
+  <div class="row">
+   <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="搜尋運鏡，例如：環繞、推進、dolly、無人機…" autocomplete="off"><kbd>/</kbd></label>
+   <select class="sel" id="fPw" aria-label="動感強度"><option value="0">強度：全部</option><option value="1">● 平穩</option><option value="2">●● 明顯</option><option value="3">●●● 強烈</option></select>
+   <select class="sel" id="fDen" aria-label="版面密度"><option value="l">大圖</option><option value="m">中</option><option value="s">小圖</option></select>
+   <button class="btn sm" id="bFav">♥ 收藏 <span class="badge" id="fCnt" hidden>0</span></button>
+   <button class="btn sm" id="bPlay">❚❚ 全部暫停</button>
+   <button class="btn sm" id="bCmp">⇄ 比較</button>
+  </div>
+  <div class="chips" id="chips"></div>
+ </div>
+</div>
+<main class="wrap" id="main"></main>
+<section class="wrap guide" id="guide">
+ <h2 style="font-size:26px;margin:0">怎麼用？三步驟</h2>
+ <div class="steps">
+  <div class="step"><b class="n">1</b><h4>找到想要的運鏡</h4><p>看預覽就知道鏡頭怎麼動。右下角的小地圖會顯示相機的移動路線與視野。</p></div>
+  <div class="step"><b class="n">2</b><h4>複製英文提示詞</h4><p>每張卡片都有「複製提示詞」。想要更短或更詳細的版本，可以點進詳情切換。</p></div>
+  <div class="step"><b class="n">3</b><h4>接上主體與場景</h4><p>先寫「誰、在哪裡」，再貼上運鏡句。也可以用「提示詞組合器」一次接好。</p></div>
+ </div>
+ <div class="cols">
+  <div class="box"><h4>讓運鏡更穩定的寫法</h4><ul>
+   <li>一個鏡頭只放一個主要運鏡，需要兩個動作時用 <b>then</b> 連接。</li>
+   <li>先寫主體與場景，再寫運鏡句。</li>
+   <li>把速度與幅度寫出來：slow、subtle、fast、120 degrees。</li>
+   <li>環繞、橫移時加上 <b>keep the subject centered</b>。</li>
+   <li>想完全不動，要明確寫 <b>no camera movement</b>。</li>
+   <li>效果不穩時，改用卡片裡「核心詞」的精簡版再試一次。</li>
+  </ul></div>
+  <div class="box"><h4>各平台使用提醒</h4><ul>
+   <li><b>Veo／Sora／Runway</b>：貼上完整的英文句子，運鏡寫在提示詞前半段，通常最有效。</li>
+   <li><b>Kling／海螺／Pika</b>：若平台另有「運鏡控制」功能，可與提示詞並用，但不要寫互相矛盾的動作。</li>
+   <li>各家模型更新很快，同一句提示詞在不同版本的表現會不同，建議多生成幾次再挑選。</li>
+   <li>本站預覽是簡化的 3D 示意，用來看懂「鏡頭怎麼動」，不代表生成結果的畫面。</li>
+  </ul></div>
+  <div class="box"><h4>最容易搞混的幾組（點一下直接比較）</h4><div class="pairs" id="pairs"></div></div>
+ </div>
+</section>
+<footer><div class="wrap">AI 影片運鏡提示詞大全 ｜ 預覽為程式即時繪製的示意動畫，生成結果會因模型與版本而異。快捷鍵：<span class="mono">/</span> 搜尋　<span class="mono">← →</span> 上下一個　<span class="mono">空白鍵</span> 播放／暫停　<span class="mono">C</span> 複製　<span class="mono">F</span> 收藏</div></footer>
+
+<dialog id="dM"><div class="dh"><div class="nav"><button class="btn sm" id="mPrev">← 上一個</button><button class="btn sm" id="mNext">下一個 →</button></div><button class="btn sm" id="mClose">✕ 關閉</button></div>
+ <div class="dm"><div><div class="stage"><canvas id="mCv" width="800" height="450"></canvas></div>
+  <div class="ctl"><button class="btn sm" id="mPlay">暫停</button><input type="range" id="mSeek" min="0" max="1000" value="0" aria-label="播放進度"><select class="sel" id="mSpd" style="padding:4px 8px"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div>
+  <div class="ctl"><button class="tgl on" id="tMap">路徑地圖</button><button class="tgl" id="tGrid">三分線</button><button class="tgl" id="tLet">寬銀幕 2.39:1</button><button class="tgl on" id="tHud">錄影資訊</button></div>
+  <div class="kv" style="margin-top:14px"><b>適合場景</b><span id="mScene"></span></div>
+  <div class="kv"><b>容易混淆</b><span class="vs" id="mVs"></span></div>
+ </div>
+ <div><h2 id="mName"></h2><div class="en2 en" id="mEn"></div><div id="mDesc"></div>
+  <div class="tabs" id="mTabs"><button class="tab on" data-v="std">標準</button><button class="tab" data-v="short">精簡</button><button class="tab" data-v="long">詳細</button></div>
+  <div class="pbox en"><div class="lb"><span>ENGLISH PROMPT（貼到 AI）</span></div><div class="tx" id="mEnP"></div></div>
+  <div class="pbox"><div class="lb"><span>中文說明</span></div><div class="tx" id="mZhP"></div></div>
+  <div class="tip" id="mTip"></div>
+  <div class="foot2"><button class="btn pri" id="mCopy">複製英文提示詞</button><button class="btn" id="mCopyZ">複製中文</button><button class="btn favb" id="mFav">♥ 收藏</button><button class="btn" id="mAdd">＋ 加入組合器</button><button class="btn" id="mLink">🔗 複製連結</button></div>
+ </div></div></dialog>
+
+<dialog id="dB"><div class="dh"><b>✎ 提示詞組合器</b><button class="btn sm" id="bClose">✕ 關閉</button></div>
+ <div class="bd2">
+  <div class="fld"><label>主體（英文，例如：a young woman in a red coat）</label><input id="bSub" placeholder="a young woman in a red coat"></div>
+  <div class="fld"><label>場景與背景（英文）</label><input id="bScn" placeholder="walking through a neon-lit Tokyo street at night"></div>
+  <div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b style="font-size:14px">運鏡（依序執行）</b><select class="sel" id="bAddSel" style="padding:4px 8px"></select><button class="btn sm" id="bAddBtn">＋ 加入</button></div><div class="mvlist" id="bList"></div></div>
+  <div class="f2">
+   <div class="fld"><label>速度</label><select id="bSpd"><option value="">不指定</option><option value="very slow and smooth">非常慢</option><option value="slow and smooth">慢而平穩</option><option value="medium pace">中等</option><option value="fast and dynamic">快速有動感</option></select></div>
+   <div class="fld"><label>鏡頭</label><select id="bLns"><option value="">不指定</option><option value="35mm lens">35mm 標準</option><option value="wide angle lens">廣角</option><option value="85mm telephoto lens, shallow depth of field">長焦淺景深</option><option value="anamorphic lens">變形寬銀幕</option></select></div>
+   <div class="fld"><label>風格與光線</label><select id="bSty"><option value="">不指定</option><option value="cinematic, golden hour lighting">電影感・黃金時刻</option><option value="documentary realism, natural light">紀錄片寫實</option><option value="high-end commercial look, clean studio light">高質感商業廣告</option><option value="moody night, neon lights, rain reflections">夜晚霓虹</option></select></div>
+  </div>
+  <div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="font-size:14px">組合結果（英文）</b><div style="display:flex;gap:6px"><button class="btn sm" id="bReset">清空</button><button class="btn sm pri" id="bCopy">複製</button></div></div><div class="out" id="bOut"></div><div style="color:var(--mut);font-size:13px;margin-top:8px" id="bZh"></div></div>
+ </div></dialog>
+
+<dialog id="dC"><div class="dh"><b>⇄ 並排比較</b><div style="display:flex;gap:6px"><button class="btn sm" id="cPlay">暫停</button><button class="btn sm" id="cClose">✕ 關閉</button></div></div>
+ <div class="cmp"><div><select class="sel" id="cA" style="width:100%;margin-bottom:8px"></select><div class="stage"><canvas id="cCvA" width="640" height="360"></canvas></div><div class="pbox en" style="margin-top:8px"><div class="tx" id="cPA"></div></div><div class="tip" id="cTA"></div></div>
+ <div><select class="sel" id="cB" style="width:100%;margin-bottom:8px"></select><div class="stage"><canvas id="cCvB" width="640" height="360"></canvas></div><div class="pbox en" style="margin-top:8px"><div class="tx" id="cPB"></div></div><div class="tip" id="cTB"></div></div></div></dialog>
+<div class="toast" id="toast" role="status" popover="manual"></div>
+<script>
+/* ================= 運鏡預覽引擎（自製簡易 3D）================= */
+const RAD=Math.PI/180;
+const clamp=(x,a,b)=>x<a?a:x>b?b:x;
+const V={
+  sub:(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],
+  add:(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]],
+  mul:(a,k)=>[a[0]*k,a[1]*k,a[2]*k],
+  dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],
+  cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],
+  len:a=>Math.hypot(a[0],a[1],a[2]),
+  norm:a=>{const l=Math.hypot(a[0],a[1],a[2])||1;return [a[0]/l,a[1]/l,a[2]/l]},
+};
+const LIGHT=V.norm([0.55,0.5,0.75]);
+const SUNDIR=V.norm([0.55,0.2,0.8]);
+const AMB=[0.66,0.70,0.82], SUNC=[1.0,0.86,0.68];
+const FOG=[238,198,160];
+const mixc=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
+const rgb=(c,al)=>al==null?`rgb(${c[0]|0},${c[1]|0},${c[2]|0})`:`rgba(${c[0]|0},${c[1]|0},${c[2]|0},${al})`;
+function shade(col,n){
+  const d=Math.max(0,V.dot(n,LIGHT)), h=0.55+0.45*n[1];
+  return [Math.min(255,col[0]*(AMB[0]*h+SUNC[0]*d*0.78)),Math.min(255,col[1]*(AMB[1]*h+SUNC[1]*d*0.78)),Math.min(255,col[2]*(AMB[2]*h+SUNC[2]*d*0.78))];
+}
+const fogF=d=>0.92*(1-Math.exp(-Math.max(0,d)/190));
+
+function hull2(pts){
+  pts=pts.slice().sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+  if(pts.length<3)return pts;
+  const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+  const lo=[];for(const p of pts){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],p)<=0)lo.pop();lo.push(p)}
+  const up=[];for(let i=pts.length-1;i>=0;i--){const p=pts[i];while(up.length>=2&&cr(up[up.length-2],up[up.length-1],p)<=0)up.pop();up.push(p)}
+  up.pop();lo.pop();return lo.concat(up);
+}
+function shadowHull(verts){
+  const g=verts.map(p=>{const k=Math.max(0,p[1])/LIGHT[1];return [p[0]-LIGHT[0]*k,p[2]-LIGHT[2]*k]});
+  return hull2(g).map(q=>[q[0],0.01,q[1]]);
+}
+const centroid=v=>{let x=0,y=0,z=0;for(const p of v){x+=p[0];y+=p[1];z+=p[2]}const n=v.length;return [x/n,y/n,z/n]};
+function mkPoly(fv,c,col,flat){
+  const a=V.sub(fv[1],fv[0]),b=V.sub(fv[2],fv[0]);
+  let n=V.norm(V.cross(a,b));const fc=centroid(fv);
+  if(V.dot(n,V.sub(fc,c))<0)n=V.mul(n,-1);
+  return {v:fv,n,col:flat?col:shade(col,n),c:fc};
+}
+const BF=[[0,2,6,4],[1,3,7,5],[0,1,5,4],[2,3,7,6],[0,1,3,2],[4,5,7,6]];
+function boxVerts(cx,cy,cz,sx,sy,sz,ry){
+  const v=[],c=Math.cos(ry),s=Math.sin(ry);
+  for(let i=0;i<8;i++){const x=((i&1)?.5:-.5)*sx,y=((i&2)?.5:-.5)*sy,z=((i&4)?.5:-.5)*sz;v.push([cx+x*c+z*s,cy+y,cz-x*s+z*c])}
+  return v;
+}
+function makeBox(cx,cy,cz,sx,sy,sz,ry,col,o){
+  o=o||{};const v=boxVerts(cx,cy,cz,sx,sy,sz,ry||0),c=[cx,cy,cz];
+  const polys=BF.map(f=>mkPoly(f.map(i=>v[i]),c,col));
+  const ob={c,polys,wins:[],verts:v,r:Math.hypot(sx,sy,sz)/2,lod:0,fg:!!o.fg};
+  return ob;
+}
+function makePrism(cx,cy,cz,r,h,n,col,ry){ // 柱體
+  const top=[],bot=[];
+  for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2+(ry||0);top.push([cx+r*Math.cos(a),cy+h/2,cz+r*Math.sin(a)]);bot.push([cx+r*Math.cos(a),cy-h/2,cz+r*Math.sin(a)])}
+  const c=[cx,cy,cz],polys=[mkPoly(top,c,col),mkPoly(bot,c,col)];
+  for(let i=0;i<n;i++){const j=(i+1)%n;polys.push(mkPoly([bot[i],bot[j],top[j],top[i]],c,col))}
+  return {c,polys,wins:[],verts:top.concat(bot),r:Math.hypot(r,h/2),lod:0};
+}
+function makeCone(cx,cy,cz,r,h,n,col){
+  const base=[],apex=[cx,cy+h,cz];
+  for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2;base.push([cx+r*Math.cos(a),cy,cz+r*Math.sin(a)])}
+  const c=[cx,cy+h*0.35,cz],polys=[mkPoly(base,c,col)];
+  for(let i=0;i<n;i++){polys.push(mkPoly([base[i],base[(i+1)%n],apex],c,col))}
+  return {c,polys,wins:[],verts:base.concat([apex]),r:Math.hypot(r,h),lod:0};
+}
+function merge(list,center){ // 合併成同一個物件
+  const polys=[],wins=[],verts=[];let r=0;
+  for(const o of list){polys.push(...o.polys);wins.push(...o.wins);verts.push(...o.verts)}
+  for(const o of list)r=Math.max(r,V.len(V.sub(o.c,center))+o.r);
+  return {c:center,polys,wins,verts,r,lod:0};
+}
+function rng(seed){return()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}}
+
+/* ---------- 靜態場景：廣場與街區 ---------- */
+const SC=(function(){
+  const R=rng(7);
+  const objs=[],ground=[],shadows=[],mount=[];
+  const gq=(pts,col)=>ground.push({v:pts.map(p=>[p[0],0,p[1]]),col:shade(col,[0,1,0])});
+  const rect=(x0,z0,x1,z1,col)=>gq([[x0,z0],[x1,z0],[x1,z1],[x0,z1]],col);
+  const E=440;
+  gq([[-E,-E],[E,-E],[E,E],[-E,E]],[112,106,98]);
+  // 廣場
+  const circ=(r,n,col,r0)=>{
+    if(!r0){const p=[];for(let i=0;i<n;i++){const a=i/n*Math.PI*2;p.push([r*Math.cos(a),r*Math.sin(a)])}gq(p,col)}
+    else for(let i=0;i<n;i++){const a=i/n*Math.PI*2,b=(i+1)/n*Math.PI*2;gq([[r0*Math.cos(a),r0*Math.sin(a)],[r*Math.cos(a),r*Math.sin(a)],[r*Math.cos(b),r*Math.sin(b)],[r0*Math.cos(b),r0*Math.sin(b)]],col)}
+  };
+  circ(16,40,[206,194,176]);
+  circ(11.2,40,[188,172,152],10.2);
+  circ(7,40,[226,214,196]);
+  for(let i=0;i<12;i++){const a=i/12*Math.PI*2,b=a+0.07;gq([[7*Math.cos(a),7*Math.sin(a)],[10.2*Math.cos(a),10.2*Math.sin(a)],[10.2*Math.cos(b),10.2*Math.sin(b)],[7*Math.cos(b),7*Math.sin(b)]],[176,160,140])}
+  circ(3.4,28,[214,152,104]);
+  circ(2.6,28,[150,128,108]);
+  // 道路（十字）
+  const RW=3.6;
+  rect(-RW,-E,RW,-14,[60,60,68]);rect(-RW,14,RW,E,[60,60,68]);
+  rect(-E,-RW,-14,RW,[60,60,68]);rect(14,-RW,E,RW,[60,60,68]);
+  const SW=1.3;
+  for(const s of [-1,1]){
+    rect(s*RW,-E,s*(RW+SW),-14,[158,152,144]);rect(s*RW,14,s*(RW+SW),E,[158,152,144]);
+    rect(-E,s*RW,-14,s*(RW+SW),[158,152,144]);rect(14,s*RW,E,s*(RW+SW),[158,152,144]);
+  }
+  // 標線
+  for(let d=20;d<150;d+=6){
+    for(const sg of [-1,1]){
+      rect(-0.12,sg*d,0.12,sg*(d+2.6),[230,226,214]);
+      rect(sg*d,-0.12,sg*(d+2.6),0.12,[230,226,214]);
+    }
+  }
+  // 斑馬線
+  for(let i=-6;i<=6;i+=1.6)for(const sg of [-1,1]){rect(i-0.35,sg*17,i+0.35,sg*19.5,[226,222,210]);rect(sg*17,i-0.35,sg*19.5,i+0.35,[226,222,210])}
+  // 建築
+  const palette=[[201,168,138],[134,148,170],[172,126,108],[120,140,150],[220,200,166],[150,130,150],[188,176,150]];
+  for(const sx of [-1,1])for(const sz of [-1,1])for(let i=0;i<3;i++)for(let j=0;j<3;j++){
+    if(R()<0.18)continue;
+    const w=9+R()*3,d=9+R()*3,h=9+R()*16+(i+j)*5.5;
+    const cx=sx*(13+i*15+w/2-2+R()*2),cz=sz*(13+j*15+d/2-2+R()*2);
+    if(Math.abs(cx)<RW+SW+w/2+0.5&&Math.abs(cz)<999&&Math.abs(cx)<(RW+SW)+w/2)continue;
+    const col=palette[(R()*palette.length)|0];
+    const ob=makeBox(cx,h/2,cz,w,h,d,0,col);
+    ob.lod=95;ob.h=h;
+    // 窗戶
+    [0,1,4,5].forEach(fi=>{
+      const f=BF[fi],p0=ob.verts[f[0]],p1=ob.verts[f[1]],p3=ob.verts[f[3]];
+      const hd=V.sub(p3,p0),vd=V.sub(p1,p0),hw=V.len(hd),hh=V.len(vd),hdn=V.norm(hd),vdn=V.norm(vd);
+      const n=ob.polys[fi].n,nx=Math.floor((hw-1.4)/3.6)+1,ny=Math.floor((hh-3.4)/4.2)+1;
+      for(let a=0;a<nx;a++)for(let b=0;b<ny;b++){
+        const x=(hw-(nx-1)*3.6)/2+a*3.6,y=3.0+b*4.2,ww=1.3,wh=2.0;
+        const o2=(dx,dy)=>V.add(V.add(V.add(p0,V.mul(hdn,x+dx*ww/2)),V.mul(vdn,y+dy*wh/2)),V.mul(n,0.05));
+        const lit=R()<0.32;
+        ob.wins.push({v:[o2(-1,-1),o2(1,-1),o2(1,1),o2(-1,1)],n,col:lit?[255,206,128]:[66,92,126],lit,c:o2(0,0)});
+      }
+    });
+    // 屋頂設備
+    const ac=makeBox(cx+(R()-.5)*w*.4,h+0.7,cz+(R()-.5)*d*.4,2.4,1.4,2,0,[140,140,146]);
+    ob.polys.push(...ac.polys);
+    objs.push(ob);
+    shadows.push(shadowHull(ob.verts));
+  }
+  // 樹
+  const tree=(x,z,s)=>{
+    const t=makeBox(x,0.9*s,z,0.34*s,1.8*s,0.34*s,0,[92,66,48]);
+    const c1=makeCone(x,1.4*s,z,1.5*s,2.6*s,6,[72,128,96]);
+    const c2=makeCone(x,2.9*s,z,1.1*s,2.2*s,6,[86,146,104]);
+    const ob=merge([t,c1,c2],[x,2.2*s,z]);objs.push(ob);
+    shadows.push(shadowHull(c1.verts.concat(c2.verts).map(p=>[p[0],Math.min(p[1],3.8*s),p[2]])));
+  };
+  for(let i=0;i<8;i++){const a=(i+0.5)/8*Math.PI*2+0.0;tree(13.2*Math.cos(a),13.2*Math.sin(a),1.1)}
+  for(let d=24;d<=70;d+=16)for(const sg of [-1,1])for(const sd of [-1,1]){tree(sd*(RW+SW+1.6),sg*d,1.2);tree(sg*d,sd*(RW+SW+1.6),1.2)}
+  // 路燈
+  for(let i=0;i<8;i++){const a=i/8*Math.PI*2+Math.PI/8,x=15*Math.cos(a),z=15*Math.sin(a);
+    const p=makeBox(x,2.6,z,0.16,5.2,0.16,0,[60,62,70]),hd=makeBox(x,5.3,z,0.7,0.22,0.4,a,[255,222,160]);
+    const ob=merge([p,hd],[x,2.8,z]);objs.push(ob);shadows.push(shadowHull(p.verts))}
+  // 花槽
+  for(let i=0;i<10;i++){const a=i/10*Math.PI*2+0.15,x=9.2*Math.cos(a),z=9.2*Math.sin(a);
+    const ob=makePrism(x,0.35,z,0.75,0.7,8,[168,130,104]);const g=makeCone(x,0.7,z,0.7,0.45,7,[104,164,108]);
+    const m=merge([ob,g],[x,0.5,z]);objs.push(m);shadows.push(shadowHull(ob.verts))}
+  // 停放的車
+  const car=(x,z,ry,col)=>{
+    const b=makeBox(x,0.62,z,4.3,0.8,1.8,ry,col),c=makeBox(x+Math.sin(ry)*0,1.28,z,2.2,0.7,1.6,ry,mixc(col,[220,230,240],0.35));
+    const wh=[];for(const sx of [-1.4,1.4])for(const sz of [-0.85,0.85]){const dx=sx*Math.cos(ry)+sz*Math.sin(ry),dz=-sx*Math.sin(ry)+sz*Math.cos(ry);wh.push(makeBox(x+dx,0.32,z+dz,0.7,0.64,0.24,ry,[28,28,32]))}
+    const m=merge([b,c,...wh],[x,0.8,z]);objs.push(m);shadows.push(shadowHull(b.verts.concat(c.verts)));
+  };
+  car(-9,5.8,0.12,[198,64,56]);car(8.5,-6.4,Math.PI-0.1,[64,110,160]);car(-32,-2.6,Math.PI/2*0+0.0,[220,190,90]);car(2.4,-30,Math.PI/2,[110,120,130]);
+  // 遠山
+  const NM=40;
+  for(let i=0;i<NM;i++){
+    const a0=i/NM*Math.PI*2,a1=(i+1)/NM*Math.PI*2,am=(a0+a1)/2,Rm=400,hh=22+R()*54;
+    const base=mixc([96,112,146],FOG,0.5);
+    mount.push({v:[[Rm*Math.cos(a0),0,Rm*Math.sin(a0)],[Rm*Math.cos(a1),0,Rm*Math.sin(a1)],[Rm*Math.cos(am),hh,Rm*Math.sin(am)]],col:base});
+    const am2=am+0.05;
+    mount.push({v:[[Rm*Math.cos(am),0,Rm*Math.sin(am)],[Rm*Math.cos(a1+0.08),0,Rm*Math.sin(a1+0.08)],[Rm*Math.cos(am2+0.04),hh*0.55,Rm*Math.sin(am2+0.04)]],col:mixc(base,FOG,0.25)});
+  }
+  const clouds=[];
+  for(let i=0;i<10;i++)clouds.push({d:V.norm([Math.cos(i*0.9+0.3)*1,0.12+R()*0.32,Math.sin(i*0.9+0.3)*1]),s:0.5+R()*0.6});
+  return {objs,ground,shadows,mount,clouds};
+})();
+
+/* ---------- 人物 ---------- */
+const PAL={orange:{jk:[232,83,58],pn:[44,50,68],bp:[52,64,88]},blue:{jk:[62,120,190],pn:[58,54,60],bp:[200,170,90]},green:{jk:[84,160,120],pn:[48,46,52],bp:[60,60,70]},violet:{jk:[150,100,190],pn:[40,44,58],bp:[220,200,160]}};
+function figure(f){
+  const pal=PAL[f.pal||'orange'],skin=[226,176,140],hair=[44,34,30],shoe=[30,30,34];
+  const pose=f.pose||'idle',ph=f.ph||0,ti=f.ti||0;
+  let leg=0,arm=0,lean=0,armUp=0,legUp=0,bob=0;
+  if(pose==='walk'){leg=Math.sin(ph)*0.55;arm=Math.sin(ph)*0.45;bob=Math.abs(Math.sin(ph))*0.03}
+  else if(pose==='run'){leg=Math.sin(ph)*0.95;arm=Math.sin(ph)*0.85;lean=-0.18;bob=Math.abs(Math.sin(ph))*0.07}
+  else if(pose==='jump'){leg=0.5;armUp=1;lean=0}
+  else{arm=Math.sin(ti*1.6)*0.03}
+  const cry=Math.cos(f.ry||0),sry=Math.sin(f.ry||0),oy=(f.y||0)+bob;
+  const HIP=[0,0.88,0],rotX=(p,pv,a)=>{if(!a)return p;const y=p[1]-pv[1],z=p[2]-pv[2],c=Math.cos(a),s=Math.sin(a);return [p[0],pv[1]+y*c-z*s,pv[2]+y*s+z*c]};
+  const toW=p=>[f.x+p[0]*cry+p[2]*sry,oy+p[1],f.z-p[0]*sry+p[2]*cry];
+  const part=(lc,sz,col,pv,a)=>{
+    const vs=[];for(let i=0;i<8;i++){let p=[lc[0]+((i&1)?.5:-.5)*sz[0],lc[1]+((i&2)?.5:-.5)*sz[1],lc[2]+((i&4)?.5:-.5)*sz[2]];if(pv&&a)p=rotX(p,pv,a);p=rotX(p,HIP,lean);vs.push(toW(p))}
+    let cc=[lc[0],lc[1],lc[2]];if(pv&&a)cc=rotX(cc,pv,a);cc=toW(rotX(cc,HIP,lean));
+    const polys=BF.map(fc=>mkPoly(fc.map(i=>vs[i]),cc,col));
+    return {c:cc,polys,wins:[],verts:vs,r:0.4};
+  };
+  const parts=[];
+  const la=-leg,ra=leg;
+  const legU=f.pose==='jump'?[-0.9,0.35]:[la,ra];
+  for(const [sx,a] of [[-0.11,legU[0]],[0.11,legU[1]]]){
+    const pv=[sx,0.88,0];
+    parts.push(part([sx,0.46,0],[0.17,0.84,0.2],pal.pn,pv,a));
+    parts.push(part([sx,0.05,0.05],[0.18,0.1,0.3],shoe,pv,a));
+  }
+  parts.push(part([0,1.17,0],[0.46,0.58,0.25],pal.jk));
+  parts.push(part([0,1.2,-0.19],[0.34,0.42,0.14],pal.bp));
+  const aA=armUp?[-2.7,-2.5]:[arm,-arm];
+  for(const [sx,a] of [[-0.3,aA[0]],[0.3,aA[1]]]){
+    const pv=[sx,1.42,0];
+    parts.push(part([sx,1.14,0],[0.11,0.6,0.13],pal.jk,pv,a));
+    parts.push(part([sx,0.8,0],[0.09,0.1,0.1],skin,pv,a));
+  }
+  const hc=toW(rotX([0,1.58,0],HIP,lean));
+  const fwd=[sry,0,cry],up=[0,1,0],rgt=[cry,0,-sry];
+  const items=[{...{kind:'obj'},c:V.add(hc,[0,-0.7,0]),r:1,parts:parts,sph:[
+    {c:V.add(V.add(hc,V.mul(fwd,-0.03)),[0,0.025,0]),r:0.128,col:hair,hair:1,off:[V.add(V.mul(fwd,-0.03),[0,0.03,0])]},
+    {c:hc,r:0.121,col:skin,face:{fwd,rgt}}]}];
+  const allv=[];parts.forEach(p=>allv.push(...p.verts));
+  return {item:items[0],verts:allv,hc};
+}
+
+/* ---------- 相機與繪製 ---------- */
+function makeCam(st,W,H){
+  const p=st.p,f=V.norm(V.sub(st.l,p));
+  let up0=Math.abs(f[1])>0.99999?[0,0,-1]:[0,1,0];
+  const r0=V.norm(V.cross(f,up0)),u0=V.cross(r0,f),rl=(st.roll||0)*RAD,c=Math.cos(rl),s=Math.sin(rl);
+  const r=[r0[0]*c+u0[0]*s,r0[1]*c+u0[1]*s,r0[2]*c+u0[2]*s],u=[u0[0]*c-r0[0]*s,u0[1]*c-r0[1]*s,u0[2]*c-r0[2]*s];
+  const F=(H/2)/Math.tan(st.fov*RAD/2);
+  return {p,f,r,u,F,cx:W/2,cy:H/2,W,H};
+}
+function toView(cam,w){const d=V.sub(w,cam.p);return [V.dot(d,cam.r),V.dot(d,cam.u),V.dot(d,cam.f)]}
+const NEAR=0.15;
+function clipNear(pts){
+  const out=[];
+  for(let i=0;i<pts.length;i++){
+    const a=pts[i],b=pts[(i+1)%pts.length],ain=a[2]>=NEAR,bin=b[2]>=NEAR;
+    if(ain)out.push(a);
+    if(ain!==bin){const t=(NEAR-a[2])/(b[2]-a[2]);out.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,NEAR])}
+  }
+  return out;
+}
+function pathPoly(ctx,cam,verts){
+  const pts=[];for(let i=0;i<verts.length;i++)pts.push(toView(cam,verts[i]));
+  let anyIn=false;for(const q of pts)if(q[2]>=NEAR){anyIn=true;break}
+  if(!anyIn)return false;
+  const cl=pts.every(q=>q[2]>=NEAR)?pts:clipNear(pts);
+  if(cl.length<3)return false;
+  ctx.beginPath();
+  for(let i=0;i<cl.length;i++){const q=cl[i],x=cam.cx+q[0]/q[2]*cam.F,y=cam.cy-q[1]/q[2]*cam.F;i?ctx.lineTo(x,y):ctx.moveTo(x,y)}
+  ctx.closePath();return true;
+}
+function horizon(cam){
+  const a0=V.dot([0,1,0],cam.r),a1=V.dot([0,1,0],cam.u),m=Math.hypot(a0,a1);
+  const pitch=Math.asin(clamp(cam.f[1],-1,1));
+  let ax=m<1e-3?[0,-1]:[a0/m,-a1/m];
+  const pc=clamp(pitch,-88*RAD,88*RAD);
+  return {ax,sh:-cam.F*Math.tan(pc),pitch};
+}
+function drawSky(ctx,cam){
+  const h=horizon(cam),W=cam.W,H=cam.H,S=cam.F*2.3;
+  const p0=[cam.cx+h.ax[0]*h.sh,cam.cy+h.ax[1]*h.sh],p1=[cam.cx+h.ax[0]*(h.sh+S),cam.cy+h.ax[1]*(h.sh+S)];
+  const g=ctx.createLinearGradient(p0[0],p0[1],p1[0],p1[1]);
+  g.addColorStop(0,'#f6d3a8');g.addColorStop(0.12,'#f0c7a4');g.addColorStop(0.35,'#a9b4cc');g.addColorStop(0.7,'#5f7fae');g.addColorStop(1,'#2d4c80');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  // 太陽
+  const sp=V.add(cam.p,V.mul(SUNDIR,1000)),sv=toView(cam,sp);
+  if(sv[2]>1){
+    const x=cam.cx+sv[0]/sv[2]*cam.F,y=cam.cy-sv[1]/sv[2]*cam.F,R=cam.F*0.62;
+    const sg=ctx.createRadialGradient(x,y,0,x,y,R);
+    sg.addColorStop(0,'rgba(255,250,225,1)');sg.addColorStop(0.035,'rgba(255,240,200,0.95)');sg.addColorStop(0.12,'rgba(255,214,160,0.5)');sg.addColorStop(0.5,'rgba(255,184,130,0.14)');sg.addColorStop(1,'rgba(255,170,120,0)');
+    ctx.fillStyle=sg;ctx.fillRect(x-R,y-R,R*2,R*2);
+  }
+  // 雲
+  for(const c of SC.clouds){
+    const v=toView(cam,V.add(cam.p,V.mul(c.d,1000)));if(v[2]<1)continue;
+    const x=cam.cx+v[0]/v[2]*cam.F,y=cam.cy-v[1]/v[2]*cam.F,R=cam.F*0.34*c.s;
+    if(x<-R*3||x>W+R*3||y<-R||y>H+R)continue;
+    ctx.save();ctx.translate(x,y);ctx.scale(2.6,0.5);
+    const cg=ctx.createRadialGradient(0,0,0,0,0,R);cg.addColorStop(0,'rgba(255,238,220,0.55)');cg.addColorStop(0.6,'rgba(255,214,186,0.2)');cg.addColorStop(1,'rgba(255,200,170,0)');
+    ctx.fillStyle=cg;ctx.beginPath();ctx.arc(0,0,R,0,7);ctx.fill();ctx.restore();
+  }
+  return h;
+}
+function drawFlat(ctx,cam,list,stroke){
+  for(const g of list){
+    if(!pathPoly(ctx,cam,g.v))continue;
+    ctx.fillStyle=rgb(g.col);ctx.fill();
+    if(stroke){ctx.strokeStyle=rgb(g.col);ctx.lineWidth=0.7;ctx.stroke()}
+  }
+}
+function drawGround(ctx,cam,h,dyn){
+  drawFlat(ctx,cam,SC.mount,true);
+  drawFlat(ctx,cam,SC.ground,false);
+  // 影子
+  ctx.fillStyle='rgba(30,26,44,0.34)';
+  const sh=SC.shadows.concat(dyn.shadows);
+  for(const s of sh){if(pathPoly(ctx,cam,s))ctx.fill()}
+  // 地面霧
+  const ch=Math.max(0.3,cam.p[1]);
+  const dl=[0.0015,0.25,0.5,0.9,1.6,3,6,12];
+  const p0=[cam.cx+h.ax[0]*h.sh,cam.cy+h.ax[1]*h.sh];
+  const sEnd=-cam.F*Math.tan(clamp(h.pitch+12*RAD,-88*RAD,88*RAD));
+  const span=h.sh-sEnd;
+  if(span>2){
+    const p1=[cam.cx+h.ax[0]*sEnd,cam.cy+h.ax[1]*sEnd];
+    const g=ctx.createLinearGradient(p0[0],p0[1],p1[0],p1[1]);
+    for(const d of dl){
+      const s=-cam.F*Math.tan(clamp(h.pitch+d*RAD,-88*RAD,88*RAD)),t=clamp((h.sh-s)/span,0,1);
+      const dist=ch/Math.tan(d*RAD);g.addColorStop(t,rgb(FOG,fogF(dist)));
+    }
+    ctx.fillStyle=g;ctx.fillRect(0,0,cam.W,cam.H);
+  }
+}
+function drawObj(ctx,cam,ob,dist,alpha){
+  const fg=fogF(dist-ob.r*0.5),cp=cam.p;
+  for(const pl of ob.polys){
+    if(V.dot(pl.n,V.sub(cp,pl.c))<=0)continue;
+    if(!pathPoly(ctx,cam,pl.v))continue;
+    const c=mixc(pl.col,FOG,fg);ctx.fillStyle=rgb(c);ctx.fill();ctx.strokeStyle=rgb(c);ctx.lineWidth=0.6;ctx.stroke();
+  }
+  if(dist<ob.lod){
+    for(const w of ob.wins){
+      if(V.dot(w.n,V.sub(cp,w.c))<=0)continue;
+      if(!pathPoly(ctx,cam,w.v))continue;
+      const base=w.lit?w.col:shade(w.col,[0,0.2,0.98]);
+      ctx.fillStyle=rgb(mixc(base,FOG,fg*0.9));ctx.fill();
+    }
+  }
+}
+function drawFigure(ctx,cam,it,dist){
+  const fg=fogF(dist);
+  const parts=it.parts.map(p=>({p,d:V.len(V.sub(p.c,cam.p))})).sort((a,b)=>b.d-a.d);
+  const sph=it.sph.map(s=>({s,d:V.len(V.sub(s.c,cam.p))})).sort((a,b)=>b.d-a.d);
+  // 頭在最上，身體部件先畫（頭離相機很近時仍有小機率穿插，可接受）
+  for(const q of parts)drawObj(ctx,cam,q.p,q.d,0);
+  for(const q of sph){
+    const s=q.s,v=toView(cam,s.c);if(v[2]<NEAR)continue;
+    const x=cam.cx+v[0]/v[2]*cam.F,y=cam.cy-v[1]/v[2]*cam.F,r=s.r*cam.F/v[2];
+    const Lv=[V.dot(LIGHT,cam.r),V.dot(LIGHT,cam.u),V.dot(LIGHT,cam.f)];
+    const g=ctx.createRadialGradient(x+Lv[0]*r*0.45,y-Lv[1]*r*0.45,r*0.1,x,y,r*1.05);
+    const hi=mixc([Math.min(255,s.col[0]*1.25+20),Math.min(255,s.col[1]*1.15+10),Math.min(255,s.col[2]*1.05)],FOG,fg),lo=mixc([s.col[0]*0.42,s.col[1]*0.46,s.col[2]*0.6],FOG,fg);
+    g.addColorStop(0,rgb(hi));g.addColorStop(1,rgb(lo));
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,Math.max(0.5,r),0,7);ctx.fill();
+    if(s.face&&r>1.6){
+      const hv=V.norm(V.sub(cam.p,s.c)),fd=V.dot(s.face.fwd,hv);
+      if(fd>0.12){
+        for(const sg of [-1,1]){
+          const e=V.add(V.add(V.add(s.c,V.mul(s.face.fwd,s.r*0.92)),V.mul(s.face.rgt,sg*s.r*0.38)),[0,s.r*0.1,0]);
+          const ev=toView(cam,e),ex=cam.cx+ev[0]/ev[2]*cam.F,ey=cam.cy-ev[1]/ev[2]*cam.F;
+          ctx.fillStyle='rgba(30,24,24,0.9)';ctx.beginPath();ctx.ellipse(ex,ey,Math.max(0.6,r*0.1*fd),Math.max(0.8,r*0.14),0,0,7);ctx.fill();
+        }
+      }
+    }
+  }
+}
+function propItems(props){
+  const out=[];
+  for(const p of props||[]){
+    if(p.type==='box')out.push(makeBox(p.x,p.y,p.z,p.sx,p.sy,p.sz,p.ry||0,p.col||[120,126,140],{fg:p.fg}));
+    else if(p.type==='post'){const o=makePrism(p.x,p.y,p.z,p.r||0.22,p.h||1.2,10,p.col||[150,150,160]);o.fg=!!p.fg;out.push(o)}
+    else if(p.type==='pot'){const a=makePrism(p.x,p.y,p.z,0.28,0.5,10,[170,120,96]),b=makeCone(p.x,p.y+0.25,p.z,0.34,0.8,7,[96,170,110]);const m=merge([a,b],[p.x,p.y+0.2,p.z]);m.fg=!!p.fg;out.push(m)}
+  }
+  return out;
+}
+function renderScene(ctx,st,W,H,layer){
+  const cam=makeCam(st,W,H);const TD=Math.hypot(cam.cx,cam.cy)/cam.F*1.04;
+  const dyn={shadows:[]},items=[];
+  const figs=[];
+  if(st.subj)figs.push(st.subj);
+  for(const f of st.figs||[])figs.push(f);
+  for(const f of figs){
+    const fg=figure(f);
+    const d=V.len(V.sub(fg.item.c,cam.p));
+    fg.item.fg=!!f.fg;items.push({fig:fg.item,d});
+    dyn.shadows.push(shadowHull(fg.verts));
+  }
+  for(const o of propItems(st.props)){items.push({ob:o,d:V.len(V.sub(o.c,cam.p))});dyn.shadows.push(shadowHull(o.verts))}
+  const inc=it=>{const fgf=(it.ob||it.fig).fg;return layer===0||(layer===1&&!fgf)||(layer===2&&fgf)};
+  let h;
+  if(layer!==2){
+    h=drawSky(ctx,cam);drawGround(ctx,cam,h,dyn);
+  }
+  const list=[];
+  for(const ob of SC.objs){
+    const v=toView(cam,ob.c);if(v[2]<-ob.r)continue;if(v[2]>0&&(Math.hypot(v[0],v[1])-ob.r>v[2]*TD||ob.r*cam.F/v[2]<0.8))continue;
+    const d=V.len(V.sub(ob.c,cam.p));if(d>250&&ob.r<8)continue;
+    if(layer===2)continue;
+    list.push({ob,d});
+  }
+  for(const it of items)if(inc(it))list.push(it);
+  list.sort((a,b)=>b.d-a.d);
+  for(const it of list){
+    if(it.ob)drawObj(ctx,cam,it.ob,it.d);else drawFigure(ctx,cam,it.fig,it.d);
+  }
+}
+
+/* ---------- 運鏡狀態 ---------- */
+const EASE={
+  io:t=>0.5-0.5*Math.cos(Math.PI*t),
+  lin:t=>t,
+  in:t=>t*t,
+  out:t=>1-(1-t)*(1-t),
+  cub:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,
+  whip:t=>{const s=clamp((t-0.3)/0.3,0,1);return s<.5?4*s*s*s:1-Math.pow(-2*s+2,3)/2},
+  crash:t=>{const s=clamp((t-0.42)/0.16,0,1);return 1-Math.pow(1-s,3)},
+  late:t=>{const s=clamp((t-0.2)/0.6,0,1);return 0.5-0.5*Math.cos(Math.PI*s)},
+};
+const SUBJ0={x:0,z:0,ry:0,pose:'idle'};
+function stateAt(mv,e,tt){
+  const raw=mv.cam(e),s={p:raw.p.slice(),l:raw.l.slice(),fov:raw.fov||40,roll:raw.roll||0,dof:raw.dof,figs:raw.figs,props:raw.props};
+  s.subj=raw.subj===null?null:Object.assign({},SUBJ0,raw.subj||{});
+  if(s.subj)s.subj.ti=tt;
+  if(s.figs)s.figs=s.figs.map(f=>Object.assign({ti:tt},f));
+  if(mv.shake){
+    const a=mv.shake,t=tt*(a.f||1);
+    const n=(k)=>Math.sin(t*3.1+k*1.7)*0.5+Math.sin(t*6.7+k*2.9)*0.3+Math.sin(t*11.3+k*0.7)*0.2;
+    s.p[0]+=n(1)*a.pos;s.p[1]+=n(2)*a.pos;s.p[2]+=n(3)*a.pos*0.5;
+    s.l[0]+=n(4)*a.rot;s.l[1]+=n(5)*a.rot;s.roll+=n(6)*(a.roll||0);
+  }
+  return s;
+}
+const DIAG=new WeakMap();
+function diagInfo(mv){
+  if(DIAG.has(mv))return DIAG.get(mv);
+  const N=48,P=[],L=[],S=[],FV=[];
+  for(let i=0;i<=N;i++){const s=stateAt(mv,i/N,0);P.push(s.p);L.push(s.l);S.push(s.subj?[s.subj.x,s.subj.z]:null);FV.push(s.fov)}
+  let xs=[],ys=[],zs=[];
+  P.forEach(p=>{xs.push(p[0]);ys.push(p[1]);zs.push(p[2])});
+  S.forEach(q=>{if(q){xs.push(q[0]);zs.push(q[1])}});
+  const st0=stateAt(mv,0,0);
+  (st0.figs||[]).forEach(f=>{xs.push(f.x);zs.push(f.z)});
+  const ext=a=>Math.max(...a)-Math.min(...a);
+  const hor=Math.max(ext(xs),ext(zs));
+  const side=ext(P.map(p=>p[1]))>Math.max(1.5,hor*0.8)&&!(mv.diag==='top');
+  const info={mode:mv.diag==='top'?'top':side?'side':'top'};
+  if(info.mode==='side'){
+    const s0=st0.subj?[st0.subj.x,st0.subj.z]:[0,0];
+    let d=[P[0][0]-s0[0],P[0][2]-s0[1]];let m=Math.hypot(d[0],d[1]);if(m<0.5){d=[0,1];m=1}d=[d[0]/m,d[1]/m];
+    info.d=d;info.s0=s0;
+    const hx=[],hy=[];P.forEach(p=>{hx.push(-((p[0]-s0[0])*d[0]+(p[2]-s0[1])*d[1]));hy.push(p[1])});hx.push(0);hy.push(0);hy.push(2);
+    info.b=[Math.min(...hx),Math.max(...hx),Math.min(...hy),Math.max(...hy)];
+  }else{
+    xs.push(0);zs.push(0);
+    info.b=[Math.min(...xs)-1.6,Math.max(...xs)+1.6,Math.min(...zs)-1.6,Math.max(...zs)+1.6];
+  }
+  info.P=P;info.L=L;info.S=S;info.N=N;
+  DIAG.set(mv,info);return info;
+}
+function drawMap(ctx,x,y,sz,mv,st,sc){
+  const info=diagInfo(mv),pad=sz*0.1,inner=sz-pad*2;
+  ctx.save();
+  ctx.fillStyle='rgba(8,10,14,0.66)';ctx.strokeStyle='rgba(255,255,255,0.14)';ctx.lineWidth=Math.max(1,sc*0.8);
+  const rr=sz*0.08;ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+sz,y,x+sz,y+sz,rr);ctx.arcTo(x+sz,y+sz,x,y+sz,rr);ctx.arcTo(x,y+sz,x,y,rr);ctx.arcTo(x,y,x+sz,y,rr);ctx.closePath();ctx.fill();ctx.stroke();
+  ctx.beginPath();ctx.rect(x,y,sz,sz);ctx.clip();
+  const b=info.b;let bw=b[1]-b[0],bh=b[3]-b[2];const scl=Math.min(inner/Math.max(bw,0.5),inner/Math.max(bh,0.5));
+  const ox=x+sz/2-((b[0]+b[1])/2)*scl,oy0=y+sz/2;
+  let X,Y;
+  if(info.mode==='top'){X=(wx)=>ox+wx*scl;Y=(wz)=>oy0+(wz-(b[2]+b[3])/2)*scl}
+  else{X=(h)=>ox+h*scl;Y=(wy)=>y+sz/2-(wy-(b[2]+b[3])/2)*scl}
+  // 格線
+  ctx.strokeStyle='rgba(255,255,255,0.06)';ctx.lineWidth=1;
+  const step=Math.pow(10,Math.floor(Math.log10(Math.max(bw,bh)/2)))||1;
+  // 軌跡
+  const pts=info.P.map((p,i)=>{
+    if(info.mode==='top')return [X(p[0]),Y(p[2])];
+    const hx=-((p[0]-info.s0[0])*info.d[0]+(p[2]-info.s0[1])*info.d[1]);return [X(hx),Y(p[1])];
+  });
+  if(info.mode==='side'){ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.beginPath();ctx.moveTo(x,Y(0));ctx.lineTo(x+sz,Y(0));ctx.stroke()}
+  ctx.setLineDash([sc*3,sc*3]);ctx.strokeStyle='rgba(255,209,102,0.55)';ctx.lineWidth=Math.max(1,sc*1.2);ctx.beginPath();
+  pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke();ctx.setLineDash([]);
+  // 被攝體軌跡
+  if(info.mode==='top'&&info.S[0]){
+    const a=info.S[0],bb=info.S[info.N];
+    if(Math.hypot(a[0]-bb[0],a[1]-bb[1])>0.5){ctx.setLineDash([sc*2,sc*3]);ctx.strokeStyle='rgba(255,122,69,0.45)';ctx.beginPath();info.S.forEach((q,i)=>i?ctx.lineTo(X(q[0]),Y(q[1])):ctx.moveTo(X(q[0]),Y(q[1])));ctx.stroke();ctx.setLineDash([])}
+  }
+  // 其他人物
+  const f0=(st.figs||[]);
+  for(const f of f0){ctx.fillStyle='rgba(120,180,255,0.85)';const fx=info.mode==='top'?X(f.x):X(-((f.x-info.s0[0])*info.d[0]+(f.z-info.s0[1])*info.d[1])),fy=info.mode==='top'?Y(f.z):Y(0.9);ctx.beginPath();ctx.arc(fx,fy,sz*0.028,0,7);ctx.fill()}
+  // 前景物
+  for(const p of st.props||[]){ctx.fillStyle='rgba(200,200,210,0.55)';if(info.mode==='top'){ctx.fillRect(X(p.x-(p.sx||0.5)/2),Y(p.z-(p.sz||0.5)/2),Math.max(2,(p.sx||0.5)*scl),Math.max(2,(p.sz||0.5)*scl))}}
+  // 被攝體
+  if(st.subj){
+    let sx,sy;
+    if(info.mode==='top'){sx=X(st.subj.x);sy=Y(st.subj.z)}else{const hx=-((st.subj.x-info.s0[0])*info.d[0]+(st.subj.z-info.s0[1])*info.d[1]);sx=X(hx);sy=Y(0.9+(st.subj.y||0))}
+    ctx.fillStyle='#ff7a45';ctx.beginPath();ctx.arc(sx,sy,sz*0.05,0,7);ctx.fill();
+    if(info.mode==='top'){ctx.strokeStyle='#ff7a45';ctx.lineWidth=Math.max(1,sc*1.4);ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+Math.sin(st.subj.ry)*sz*0.1,sy+Math.cos(st.subj.ry)*sz*0.1);ctx.stroke()}
+  }
+  // 相機與視野
+  const p=st.p,l=st.l;let cx,cy,ang;const hf=2*Math.atan(Math.tan(st.fov*RAD/2)*16/9);
+  if(info.mode==='top'){cx=X(p[0]);cy=Y(p[2]);ang=Math.atan2(l[0]-p[0],l[2]-p[2]);ang=Math.atan2(l[2]-p[2],l[0]-p[0]);
+    const half=hf/2,len=sz*0.3;
+    ctx.fillStyle='rgba(255,209,102,0.28)';ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(ang-half)*len,cy+Math.sin(ang-half)*len);ctx.lineTo(cx+Math.cos(ang+half)*len,cy+Math.sin(ang+half)*len);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(255,209,102,0.8)';ctx.lineWidth=Math.max(1,sc);ctx.stroke();
+  }else{
+    const hx=-((p[0]-info.s0[0])*info.d[0]+(p[2]-info.s0[1])*info.d[1]);cx=X(hx);cy=Y(p[1]);
+    const lx=-((l[0]-info.s0[0])*info.d[0]+(l[2]-info.s0[1])*info.d[1]);
+    ang=Math.atan2(-(l[1]-p[1]),lx-hx);ang=Math.atan2(-(l[1]-p[1]),(lx-hx));
+    ang=Math.atan2(-(l[1]-p[1]),(lx-hx));
+    const half=st.fov*RAD/2,len=sz*0.3;
+    ctx.fillStyle='rgba(255,209,102,0.28)';ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(ang-half)*len,cy+Math.sin(ang-half)*len);ctx.lineTo(cx+Math.cos(ang+half)*len,cy+Math.sin(ang+half)*len);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(255,209,102,0.8)';ctx.lineWidth=Math.max(1,sc);ctx.stroke();
+  }
+  ctx.fillStyle='#ffd166';ctx.beginPath();ctx.arc(cx,cy,sz*0.036,0,7);ctx.fill();
+  ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font=`${Math.round(sz*0.095)}px "Noto Sans TC",system-ui,sans-serif`;ctx.textBaseline='top';
+  ctx.fillText(info.mode==='top'?'俯視':'側視',x+sz*0.07,y+sz*0.05);
+}
+
+/* ---------- 預覽器 ---------- */
+function blurDraw(dst,src,px,W,H,tmp){
+  if(px<0.5){dst.drawImage(src,0,0);return}
+  const s=clamp(1/(1+px*0.7),0.05,1),w=Math.max(2,(W*s)|0),h=Math.max(2,(H*s)|0);
+  tmp.width=w;tmp.height=h;const t=tmp.getContext('2d');t.imageSmoothingQuality='high';t.clearRect(0,0,w,h);t.drawImage(src,0,0,w,h);
+  dst.imageSmoothingEnabled=true;dst.imageSmoothingQuality='high';dst.drawImage(tmp,0,0,w,h,0,0,W,H);
+}
+class Preview{
+  constructor(cv,o){
+    this.cv=cv;this.ctx=cv.getContext('2d');this.o=Object.assign({hud:true,map:true,grid:false,letter:false,mapScale:0.3},o||{});
+    this.mv=null;this.speed=1;this.paused=false;this.clock=0;this.manual=null;this.W=cv.width;this.H=cv.height;this.last=-1;
+    this.off1=document.createElement('canvas');this.off2=document.createElement('canvas');this.tmp=document.createElement('canvas');this.acc=document.createElement('canvas');
+  }
+  resize(w,h){this.W=this.cv.width=w;this.H=this.cv.height=h;[this.off1,this.off2,this.acc].forEach(c=>{c.width=w;c.height=h})}
+  setMove(mv){this.mv=mv;this.clock=0;this.manual=null}
+  cyc(){const d=(this.mv.dur||4)/this.speed;return {pre:0.4,mv:d,post:0.8,tot:0.4+d+0.8}}
+  tick(dt){if(!this.paused&&this.manual==null)this.clock=(this.clock+dt)%this.cyc().tot}
+  posterE(){return 0.62}
+  progress(){const c=this.cyc(),t=this.clock;return clamp((t-c.pre)/c.mv,0,1)}
+  setProgress(p){const c=this.cyc();this.manual=clamp(p,0,1);this.clock=c.pre+c.mv*this.manual}
+  state(){
+    const c=this.cyc(),t=this.clock;let raw;
+    if(this.manual!=null)raw=this.manual;else raw=clamp((t-c.pre)/c.mv,0,1);
+    const ez=EASE[this.mv.ease||'io'];return {raw,e:ez(raw),tt:t/this.speed*1};
+  }
+  draw(){
+    const mv=this.mv;if(!mv)return;const {W,H}=this,ctx=this.ctx,sc=W/360;
+    const s=this.state(),tt=this.clock;
+    const mb=mv.mb||0,ez=EASE[mv.ease||'io'];
+    const stNow=stateAt(mv,s.e,tt);
+    if(stNow.dof!=null){
+      const A=this.off1.getContext('2d'),B=this.off2.getContext('2d');
+      A.clearRect(0,0,W,H);B.clearRect(0,0,W,H);
+      renderScene(A,stNow,W,H,1);renderScene(B,stNow,W,H,2);
+      const Bpx=7*sc,f=stNow.dof;
+      ctx.clearRect(0,0,W,H);blurDraw(ctx,this.off1,Bpx*(1-f),W,H,this.tmp);blurDraw(ctx,this.off2,Bpx*f,W,H,this.tmp);
+    }else if(mb>0){
+      const n=6,A=this.acc.getContext('2d');
+      for(let i=0;i<n;i++){
+        const r2=clamp(s.raw-mb*(i/(n-1)),0,1),st=stateAt(mv,ez(r2),tt);
+        if(i===0){renderScene(ctx,st,W,H,0)}else{renderScene(A,st,W,H,0);ctx.globalAlpha=1/(i+1);ctx.drawImage(this.acc,0,0);ctx.globalAlpha=1}
+      }
+    }else renderScene(ctx,stNow,W,H,0);
+    // 暈影
+    const vg=ctx.createRadialGradient(W/2,H/2,H*0.35,W/2,H/2,H*0.95);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(8,6,12,0.5)');ctx.fillStyle=vg;ctx.fillRect(0,0,W,H);
+    if(this.o.grid){ctx.strokeStyle='rgba(255,255,255,0.28)';ctx.lineWidth=Math.max(1,sc);ctx.beginPath();for(let i=1;i<3;i++){ctx.moveTo(W*i/3,0);ctx.lineTo(W*i/3,H);ctx.moveTo(0,H*i/3);ctx.lineTo(W,H*i/3)}ctx.stroke()}
+    if(this.o.letter){const bh=(H-W/2.39)/2;if(bh>0){ctx.fillStyle='#000';ctx.fillRect(0,0,W,bh);ctx.fillRect(0,H-bh,W,bh)}}
+    if(this.o.hud){
+      const m=10*sc,fs=Math.round(9.5*sc*1.1);
+      ctx.font=`600 ${fs}px "IBM Plex Mono",ui-monospace,monospace`;ctx.textBaseline='top';
+      const blink=((tt*1.2)%1)<0.6;
+      if(blink){ctx.fillStyle='#ff4d4d';ctx.beginPath();ctx.arc(m+4*sc,m+fs*0.55,3.4*sc,0,7);ctx.fill()}
+      ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fillText('REC',m+11*sc,m);
+      const sec=Math.floor(tt),fr=Math.floor((tt%1)*24);
+      ctx.textAlign='right';ctx.fillStyle='rgba(255,255,255,0.7)';ctx.fillText(`00:0${sec}:${String(fr).padStart(2,'0')}`,W-m,m);ctx.textAlign='left';
+      // 取景角
+      ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=Math.max(1,sc*1.1);const k=12*sc,e=7*sc;
+      [[e,e,1,1],[W-e,e,-1,1],[e,H-e,1,-1],[W-e,H-e,-1,-1]].forEach(c=>{ctx.beginPath();ctx.moveTo(c[0],c[1]+c[3]*k);ctx.lineTo(c[0],c[1]);ctx.lineTo(c[0]+c[2]*k,c[1]);ctx.stroke()});
+      // 進度
+      ctx.fillStyle='rgba(255,255,255,0.14)';ctx.fillRect(0,H-3*sc,W,3*sc);ctx.fillStyle='#ffb547';ctx.fillRect(0,H-3*sc,W*s.raw,3*sc);
+    }
+    if(this.o.map){const ms=Math.min(W,H)*this.o.mapScale,mm=10*sc;drawMap(ctx,W-ms-mm,H-ms-mm-6*sc,ms,mv,stNow,sc)}
+    // 循環淡入淡出
+    if(this.manual==null){
+      const c=this.cyc(),t=this.clock,fd=0.22;let a=0;
+      if(t<fd)a=1-t/fd;else if(t>c.tot-fd)a=(t-(c.tot-fd))/fd;
+      if(a>0){ctx.fillStyle=`rgba(8,8,12,${a*0.92})`;ctx.fillRect(0,0,W,H)}
+    }
+  }
+}
+
+/* ================= 運鏡資料 ================= */
+const C=[0,1.25,0];
+const lerp=(a,b,e)=>a+(b-a)*e;
+const sm=x=>x*x*(3-2*x);
+const seg=(e,a,b)=>sm(clamp((e-a)/(b-a),0,1));
+const orb=(R,deg,h,c)=>{c=c||[0,0,0];return [c[0]+R*Math.sin(deg*RAD),h,c[2]+R*Math.cos(deg*RAD)]};
+const dirv=(yaw,pitch,k)=>[Math.sin(yaw*RAD)*Math.cos(pitch*RAD)*k,Math.sin(pitch*RAD)*k,-Math.cos(yaw*RAD)*Math.cos(pitch*RAD)*k];
+const addv=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
+const walkS=(z,z0)=>({z:z,ry:Math.PI,pose:'walk',ph:(z0-z)*4.5});
+
+const CATS=[
+ {id:'push',zh:'推拉與平移',en:'Dolly / Truck / Pedestal',desc:'相機本身「移動位置」。前進、後退、左右平移、垂直升降，都屬於這一類，背景會產生真實的視差。'},
+ {id:'pan',zh:'搖攝與傾斜',en:'Pan / Tilt / Roll',desc:'相機位置不動，只是「原地轉動」。畫面中遠近物體位移一致，沒有視差。'},
+ {id:'zoom',zh:'變焦',en:'Zoom',desc:'只改變鏡頭焦距，相機不動。畫面會被放大或縮小，但空間的透視不變。'},
+ {id:'orbit',zh:'環繞與弧形',en:'Orbit / Arc',desc:'相機繞著主體轉，主體維持在畫面中央，背景跟著旋轉，最能展現立體感。'},
+ {id:'track',zh:'跟拍',en:'Tracking',desc:'相機跟著移動中的人物走。前方、後方、側面、高位、低位，每種角度給人的感覺都不同。'},
+ {id:'angle',zh:'角度與視角',en:'Angle / POV',desc:'相機放在哪個高度、站在誰的位置看，決定了觀眾對主體的感受。'},
+ {id:'crane',zh:'升降與空拍',en:'Crane / Drone',desc:'大範圍的升降與飛行，用來交代場景規模、做出震撼的開場或收尾。'},
+ {id:'style',zh:'風格運鏡',en:'Style',desc:'手持、穩定器、固定鏡頭、焦點轉移，決定整支影片的氣質與質感。'},
+ {id:'combo',zh:'組合運鏡',en:'Combo',desc:'把兩個動作接在一起，一次生成更有電影感的鏡頭。用「then」連接最穩。'},
+];
+
+const MOVES=[
+/* ===== 推拉與平移 ===== */
+{id:'dolly-in',cat:'push',zh:'推軌前推',en:'Dolly In',pw:2,dur:4,vs:['zoom-in','slow-push'],
+ desc:'整台相機沿著軌道往主體靠近，背景隨距離改變，是最經典的推進鏡頭。',
+ scene:'角色登場、情緒逐漸升高、帶出重點',
+ p:'Slow dolly in toward the subject, the camera glides smoothly forward on a track, natural background parallax, steady cinematic shot.',
+ z:'鏡頭沿軌道平穩地向主體推進，背景產生自然視差，畫面穩定有電影感。',
+ core:'dolly in toward the subject',
+ tip:'想要的是「相機位置前進」，不是畫面放大，所以寫 dolly in，不要寫 zoom in。',
+ tags:'推進 拉近 前進 靠近 push in move in track in 推',
+ cam:e=>({p:[0,1.5,lerp(10.5,3.3,e)],l:C,fov:38})},
+{id:'dolly-out',cat:'push',zh:'推軌後拉',en:'Dolly Out',pw:2,dur:4,vs:['zoom-out','aerial-pullback'],
+ desc:'相機往後退開，主體在畫面中逐漸變小，周圍環境慢慢露出來。',
+ scene:'結尾收束、孤獨感、交代環境',
+ p:'Slow dolly out, the camera pulls backward away from the subject on a track, gradually revealing more of the surrounding environment.',
+ z:'鏡頭沿軌道緩緩後退，逐漸露出主體周圍的環境。',
+ core:'dolly out away from the subject',
+ tip:'後拉時要有東西可以「露出來」，建議先描述周圍的環境與背景。',
+ tags:'後退 拉遠 拉出 pull back pull out retreat 後拉',
+ cam:e=>({p:[0,1.5,lerp(3.3,10.5,e)],l:C,fov:38})},
+{id:'slow-push',cat:'push',zh:'緩慢推進（特寫）',en:'Slow Push-In',pw:1,dur:5,vs:['dolly-in','slow-zoom'],
+ desc:'幅度很小、速度很慢的推進，幾乎不被察覺，卻能慢慢拉近觀眾與角色的距離。',
+ scene:'人物特寫、內心戲、緊張氣氛',
+ p:'Extremely slow, subtle push in toward the subject\'s face, shallow depth of field, intimate emotional close-up, barely perceptible movement.',
+ z:'非常緩慢細微地推向人物臉部，淺景深，貼近情緒的特寫。',
+ core:'subtle push in toward the subject\'s face',
+ tip:'在速度詞前加 very slow、barely perceptible，可以避免模型推得太快。',
+ tags:'細微 慢速 特寫 情緒 creeping subtle slow 緩推',
+ cam:e=>({p:[0,1.52,lerp(6.4,4.6,e)],l:[0,1.45,0],fov:28})},
+{id:'truck-left',cat:'push',zh:'向左橫移',en:'Truck Left',pw:2,dur:4,vs:['pan-left','parallax-slide'],
+ desc:'整台相機往左平移，鏡頭方向不變，主體在畫面中向右滑過。',
+ scene:'展示場景、沿著牆面或貨架移動、橫向觀察',
+ p:'Camera trucks left, sliding sideways smoothly while the lens keeps facing straight ahead, the subject glides across the frame.',
+ z:'鏡頭保持朝向正前方，整台相機平穩地往左平移。',
+ core:'truck left, sliding sideways while facing straight ahead',
+ tip:'truck 是整台相機位置移動，pan 是相機原地轉動，兩者很容易搞混。',
+ tags:'橫移 左移 平移 側移 slide left lateral track left dolly left',
+ cam:e=>{const x=lerp(4.5,-4.5,e);return {p:[x,1.5,8.5],l:[x,1.35,0],fov:40}}},
+{id:'truck-right',cat:'push',zh:'向右橫移',en:'Truck Right',pw:2,dur:4,vs:['pan-right','parallax-slide'],
+ desc:'整台相機往右平移，鏡頭方向不變，主體在畫面中向左滑過。',
+ scene:'展示場景、沿著街道橫向觀察、帶出新的人物',
+ p:'Camera trucks right, sliding sideways smoothly while the lens keeps facing straight ahead, the subject glides across the frame.',
+ z:'鏡頭保持朝向正前方，整台相機平穩地往右平移。',
+ core:'truck right, sliding sideways while facing straight ahead',
+ tip:'左右是以「相機視角」為準，不是以主體為準。',
+ tags:'橫移 右移 平移 側移 slide right lateral track right dolly right',
+ cam:e=>{const x=lerp(-4.5,4.5,e);return {p:[x,1.5,8.5],l:[x,1.35,0],fov:40}}},
+{id:'pedestal-up',cat:'push',zh:'垂直升起',en:'Pedestal Up',pw:2,dur:4,vs:['tilt-up','crane-up'],
+ desc:'相機沿著垂直方向升高，鏡頭保持水平，視角逐漸變高。',
+ scene:'展現高度、角色站起來、場景揭示',
+ p:'Camera pedestals up, rising straight vertically while keeping the lens level, revealing the scene from a gradually higher viewpoint.',
+ z:'鏡頭保持水平，整台相機垂直升高，視角逐漸變高。',
+ core:'pedestal up, rising vertically while keeping the lens level',
+ tip:'不是 tilt up（相機仰起），而是整台相機升高。想要仰起請寫 tilt up。',
+ tags:'升降 上升 升高 pedestal rise elevator lift up 垂直',
+ cam:e=>{const y=lerp(0.5,5.2,e);return {p:[0,y,8.5],l:[0,y,0],fov:42}}},
+{id:'pedestal-down',cat:'push',zh:'垂直下降',en:'Pedestal Down',pw:2,dur:4,vs:['tilt-down','crane-down'],
+ desc:'相機沿著垂直方向降低，鏡頭保持水平，視角逐漸貼近地面。',
+ scene:'從高處落到人物高度、進入場景',
+ p:'Camera pedestals down, lowering straight vertically while keeping the lens level, settling at eye level with the subject.',
+ z:'鏡頭保持水平，整台相機垂直降低，最後落在與人物平視的高度。',
+ core:'pedestal down, lowering vertically while keeping the lens level',
+ tip:'與 crane down 的差別是：pedestal 不會同時前後移動或改變仰俯角。',
+ tags:'下降 降低 下沉 pedestal lower down lift down 垂直',
+ cam:e=>{const y=lerp(5.2,0.5,e);return {p:[0,y,8.5],l:[0,y,0],fov:42}}},
+{id:'dolly-zoom',cat:'push',zh:'滑動變焦（希區考克變焦）',en:'Dolly Zoom (Vertigo)',pw:3,dur:4.5,vs:['dolly-in','zoom-in'],
+ desc:'相機後退的同時拉長焦距，主體大小幾乎不變，背景卻像被拉扯變形。',
+ scene:'驚覺真相、恐懼、天旋地轉的瞬間',
+ p:'Dolly zoom, vertigo effect: the camera moves backward while zooming in, the subject stays the same size while the background stretches and warps.',
+ z:'滑動變焦（眩暈效應）：相機後退同時拉長焦距，主體大小不變，背景被拉長扭曲。',
+ core:'dolly zoom vertigo effect, camera moving backward while zooming in',
+ tip:'兩個動作要同時寫清楚。這個效果對模型來說不太穩定，建議多生成幾次挑選。',
+ tags:'眩暈 暈眩 vertigo hitchcock 希區考克 dolly zoom 伸縮 jaws',
+ cam:e=>{const z=lerp(3.4,12,e),k=3.4*Math.tan(38*RAD);return {p:[0,1.5,z],l:[0,1.3,0],fov:2*Math.atan(k/z)/RAD}}},
+{id:'push-through',cat:'push',zh:'穿越前景推進',en:'Push Through Foreground',pw:2,dur:4.5,vs:['parallax-slide','dolly-in'],
+ desc:'相機向前穿過近處的柱子、樹枝等物體，前景與背景的位移差製造強烈縱深。',
+ scene:'進入空間、探索感、轉場',
+ p:'Camera pushes forward through foreground objects, pillars sliding past the frame edges, strong parallax and depth, smooth forward motion.',
+ z:'鏡頭向前穿過前景的柱子，柱子從畫面兩側快速掠過，縱深感強烈。',
+ core:'push forward through foreground objects with strong parallax',
+ tip:'提示詞中要明確寫出前景物件（柱子、樹枝、窗框），模型才知道要穿過什麼。',
+ tags:'穿越 前景 視差 parallax foreground pass through 穿過 遮擋',
+ cam:e=>({p:[0,1.5,lerp(11.5,3.6,e)],l:[0,1.35,0],fov:46,props:[
+  {type:'post',x:-1.5,y:1.6,z:7.6,r:0.3,h:3.2,col:[176,168,158]},{type:'post',x:1.5,y:1.6,z:7.6,r:0.3,h:3.2,col:[176,168,158]},
+  {type:'post',x:-1.5,y:1.6,z:5.4,r:0.3,h:3.2,col:[176,168,158]},{type:'post',x:1.5,y:1.6,z:5.4,r:0.3,h:3.2,col:[176,168,158]}]})},
+{id:'parallax-slide',cat:'push',zh:'視差橫移',en:'Parallax Slide',pw:2,dur:4.5,vs:['truck-right','push-through'],
+ desc:'橫移時近處的物體移動得比遠處快，讓畫面有立體的層次感。',
+ scene:'產品展示、空間介紹、強調前中後景層次',
+ p:'Smooth lateral slide to the right with foreground objects passing quickly and the background moving slowly, strong parallax and layered depth.',
+ z:'鏡頭平穩地向右橫移，前景物體快速掠過，背景緩慢移動，層次分明。',
+ core:'lateral slide to the right with strong foreground parallax',
+ tip:'寫出前景、中景、背景各有什麼物件，視差效果會更明顯。',
+ tags:'視差 層次 立體 parallax layers slide depth 橫移',
+ cam:e=>{const x=lerp(-3.5,3.5,e);return {p:[x,1.5,9],l:[x,1.3,0],fov:38,props:[
+  {type:'pot',x:-1.8,y:0.25,z:5.8,fg:false},{type:'box',x:0.8,y:0.35,z:5.2,sx:0.9,sy:0.7,sz:0.9,col:[176,132,86]},{type:'pot',x:2.6,y:0.25,z:6.4}]}}},
+
+/* ===== 搖攝與傾斜 ===== */
+{id:'pan-left',cat:'pan',zh:'向左橫搖',en:'Pan Left',pw:2,dur:4,vs:['truck-left','whip-pan'],
+ desc:'相機位置不動，鏡頭往左轉動，帶出左側的人物或景物。',
+ scene:'場景交代、視線轉移、尋找目標',
+ p:'Camera pans left, rotating smoothly on a fixed tripod to follow the view toward the person standing on the left.',
+ z:'相機固定在原地，平穩地向左轉動，帶出左側的人物。',
+ core:'pan left on a fixed tripod',
+ tip:'pan 是原地轉動，近處與遠處的物體位移一致，沒有視差。',
+ tags:'橫搖 左搖 搖鏡 pan left swing 搖攝',
+ cam:e=>{const p=[0,1.5,9];return {p,l:addv(p,dirv(lerp(6,-40,e),-1,10)),fov:42,subj:{x:0,z:0,ry:0.2},figs:[{x:-8,z:-1,ry:0.7,pal:'blue'}]}}},
+{id:'pan-right',cat:'pan',zh:'向右橫搖',en:'Pan Right',pw:2,dur:4,vs:['truck-right','whip-pan'],
+ desc:'相機位置不動，鏡頭往右轉動，帶出右側的人物或景物。',
+ scene:'場景交代、視線轉移、帶出新角色',
+ p:'Camera pans right, rotating smoothly on a fixed tripod to follow the view toward the person standing on the right.',
+ z:'相機固定在原地，平穩地向右轉動，帶出右側的人物。',
+ core:'pan right on a fixed tripod',
+ tip:'想讓畫面「跟著人物」轉動時，可加上 follow the subject。',
+ tags:'橫搖 右搖 搖鏡 pan right swing 搖攝',
+ cam:e=>{const p=[0,1.5,9];return {p,l:addv(p,dirv(lerp(-6,40,e),-1,10)),fov:42,subj:{x:0,z:0,ry:-0.2},figs:[{x:8,z:-1,ry:-0.7,pal:'blue'}]}}},
+{id:'tilt-up',cat:'pan',zh:'向上直搖',en:'Tilt Up',pw:2,dur:4.5,vs:['pedestal-up','crane-up'],
+ desc:'相機原地向上仰起，從腳到頭，再到天空與建築。',
+ scene:'展現人物氣勢、建築高度、情緒上揚',
+ p:'Camera tilts up slowly from the subject\'s feet to the sky above, fixed position, smooth vertical rotation.',
+ z:'相機固定在原地，由腳邊緩緩向上仰起，最後看到天空。',
+ core:'tilt up from the subject\'s feet to the sky',
+ tip:'tilt 是相機仰俯轉動，不是相機升高。升高請寫 pedestal up 或 crane up。',
+ tags:'直搖 上搖 仰 tilt up look up 仰拍 向上',
+ cam:e=>{const p=[0,1.2,5.2];return {p,l:addv(p,dirv(0,lerp(-11,42,e),10)),fov:42}}},
+{id:'tilt-down',cat:'pan',zh:'向下直搖',en:'Tilt Down',pw:2,dur:4.5,vs:['pedestal-down','crane-down'],
+ desc:'相機原地向下俯，從天空或高處慢慢落到主體身上。',
+ scene:'從環境切入人物、揭示地面上的細節',
+ p:'Camera tilts down slowly from the sky to the subject standing below, fixed position, smooth vertical rotation.',
+ z:'相機固定在原地，由天空緩緩向下俯，最後停在人物身上。',
+ core:'tilt down from the sky to the subject',
+ tip:'適合接在天空、建築的畫面後，用來「落到」主體上。',
+ tags:'直搖 下搖 俯 tilt down look down 俯拍 向下',
+ cam:e=>{const p=[0,1.2,5.2];return {p,l:addv(p,dirv(0,lerp(42,-11,e),10)),fov:42}}},
+{id:'whip-pan',cat:'pan',zh:'快速甩鏡',en:'Whip Pan',pw:3,dur:4,ease:'whip',mb:0.03,vs:['pan-left','crash-zoom'],
+ desc:'極快速地橫搖到另一個主體，中間畫面糊成一片，常用來轉場或製造節奏。',
+ scene:'節奏轉換、兩個場景銜接、喜劇與動作片',
+ p:'Fast whip pan from one subject to another, heavy horizontal motion blur during the movement, snappy cut-like transition.',
+ z:'快速甩鏡從一個人物切到另一個人物，移動中帶有明顯的水平動態模糊。',
+ core:'fast whip pan from one subject to another with motion blur',
+ tip:'模型有時會把動態模糊當成畫質問題，可加上 intentional motion blur 強調是刻意的效果。',
+ tags:'甩鏡 快搖 whip swish pan 動態模糊 轉場 motion blur',
+ cam:e=>{const p=[0,1.5,9];return {p,l:addv(p,dirv(lerp(-24,24,e),-1,10)),fov:42,subj:{x:-4,z:0,ry:0.3},figs:[{x:4,z:0,ry:-0.3,pal:'blue'}]}}},
+{id:'dutch-angle',cat:'pan',zh:'荷蘭角（傾斜構圖）',en:'Dutch Angle',pw:2,dur:4.5,ease:'lin',vs:['roll-360','low-angle'],
+ desc:'相機沿鏡頭軸線傾斜，地平線歪斜，製造不安與失衡的氣氛。',
+ scene:'懸疑、混亂、精神不穩定、反派登場',
+ p:'Dutch angle, the camera is tilted on its roll axis so the horizon is slanted, slow push in, tense and unsettling mood.',
+ z:'荷蘭角：相機傾斜、地平線歪斜，配合緩慢推進，氣氛緊張不安。',
+ core:'dutch angle with the camera rolled so the horizon is slanted',
+ tip:'傾斜角度可以直接寫數字，例如 15 degrees 或 30 degrees。',
+ tags:'傾斜 歪斜 荷蘭角 dutch tilt canted roll 斜角',
+ cam:e=>({p:[0,1.4,lerp(8,5.2,e)],l:C,fov:40,roll:lerp(0,17,seg(e,0,0.6))})},
+{id:'roll-360',cat:'pan',zh:'滾轉 360 度',en:'Barrel Roll',pw:3,dur:5,vs:['dutch-angle','birds-eye'],
+ desc:'相機沿著鏡頭軸線旋轉一整圈，整個世界在畫面中翻轉。',
+ scene:'動作場面、暈眩感、特效轉場',
+ p:'Camera rolls 360 degrees around its lens axis, the whole world rotating in the frame, dynamic and disorienting.',
+ z:'相機沿鏡頭軸線轉滿 360 度，整個畫面跟著翻轉，動感強烈。',
+ core:'full 360 degree barrel roll around the lens axis',
+ tip:'整圈旋轉有時模型理解有限，可先從 slowly rotates the camera 開始試。',
+ tags:'旋轉 滾轉 翻滾 roll barrel spin rotate 360',
+ cam:e=>({p:[0,1.5,6.5],l:C,fov:46,roll:lerp(0,360,e)})},
+
+/* ===== 變焦 ===== */
+{id:'zoom-in',cat:'zoom',zh:'變焦推近',en:'Zoom In',pw:2,dur:4,vs:['dolly-in','slow-zoom'],
+ desc:'相機位置不動，只改變焦距，畫面被「放大」，背景的壓縮感會增強。',
+ scene:'快速聚焦細節、監視畫面、紀錄片風格',
+ p:'Smooth optical zoom in on the subject, camera stays in place, the background compresses as the lens tightens.',
+ z:'相機固定不動，鏡頭平穩地變焦拉近，背景隨焦距變長而被壓縮。',
+ core:'smooth optical zoom in on the subject',
+ tip:'與 dolly in 不同：zoom 的透視不變，背景看起來被壓縮；dolly 則有真實的視差。',
+ tags:'放大 拉近 變焦 zoom in optical zoom 焦距',
+ cam:e=>({p:[0,1.5,10.5],l:[0,lerp(1.2,1.45,e),0],fov:lerp(48,13,e)})},
+{id:'zoom-out',cat:'zoom',zh:'變焦拉遠',en:'Zoom Out',pw:2,dur:4,vs:['dolly-out','slow-zoom'],
+ desc:'相機位置不動，焦距由長變短，畫面從特寫逐漸展開成全景。',
+ scene:'從細節展開到全貌、揭示環境',
+ p:'Smooth optical zoom out from a tight close-up to a wide shot, camera stays in place, revealing the surroundings.',
+ z:'相機固定不動，鏡頭平穩地變焦拉遠，從特寫展開成全景。',
+ core:'smooth optical zoom out from a close-up to a wide shot',
+ tip:'起始畫面要先寫清楚特寫的內容，再寫拉遠後會看到什麼。',
+ tags:'縮小 拉遠 變焦 zoom out optical zoom 焦距 展開',
+ cam:e=>({p:[0,1.5,10.5],l:[0,lerp(1.45,1.2,e),0],fov:lerp(13,48,e)})},
+{id:'crash-zoom',cat:'zoom',zh:'急速變焦',en:'Crash Zoom',pw:3,dur:3.5,ease:'crash',mb:0.025,vs:['whip-pan','zoom-in'],
+ desc:'瞬間快速拉近到主體臉部，強調驚訝或重點，帶有誇張的戲劇效果。',
+ scene:'搞笑強調、驚嚇、動作片的重點瞬間',
+ p:'Crash zoom, a sudden fast zoom in on the subject\'s face, snappy and dramatic, slight motion blur, then holds still.',
+ z:'急速變焦：瞬間拉近到人物臉部，節奏明快，帶一點動態模糊，然後停住。',
+ core:'sudden crash zoom in on the subject\'s face',
+ tip:'加上 sudden、snap 這類詞，能讓模型把速度拉快。',
+ tags:'急推 快速變焦 crash zoom snap zoom 瞬間 誇張',
+ cam:e=>({p:[0,1.5,10.5],l:[0,lerp(1.2,1.52,e),0],fov:lerp(50,9,e)})},
+{id:'slow-zoom',cat:'zoom',zh:'超慢速變焦',en:'Super Slow Zoom',pw:1,dur:6,ease:'lin',vs:['slow-push','zoom-in'],
+ desc:'幾乎察覺不到的緩慢變焦，製造壓迫感與專注感。',
+ scene:'壓迫氣氛、監視感、靜態畫面增加張力',
+ p:'Barely perceptible very slow zoom in, locked-off camera, building quiet tension.',
+ z:'幾乎察覺不到的超慢變焦，相機固定，默默累積張力。',
+ core:'barely perceptible very slow zoom in',
+ tip:'寫 barely perceptible 或 almost imperceptible，模型比較不會變焦過頭。',
+ tags:'慢速 細微 變焦 slow zoom subtle imperceptible 緩慢',
+ cam:e=>({p:[0,1.5,8],l:C,fov:lerp(42,30,e)})},
+
+/* ===== 環繞與弧形 ===== */
+{id:'orbit-left',cat:'orbit',zh:'向左環繞',en:'Orbit Left',pw:2,dur:4.5,vs:['orbit-right','arc-shot'],
+ desc:'相機繞著主體往左轉動，主體維持在畫面中央，背景跟著旋轉。',
+ scene:'英雄登場、人物介紹、強調立體感',
+ p:'Camera orbits around the subject to the left, circling smoothly while keeping the subject centered, the background rotating behind them.',
+ z:'相機繞著主體平穩地向左環繞，主體維持在畫面中央，背景跟著旋轉。',
+ core:'orbit around the subject to the left, keeping the subject centered',
+ tip:'環繞時請寫 keep the subject centered，避免主體跑出畫面。',
+ tags:'環繞 繞圈 左繞 orbit circle revolve around rotate 逆時針',
+ cam:e=>({p:orb(6.5,lerp(10,-85,e),1.5),l:C,fov:40})},
+{id:'orbit-right',cat:'orbit',zh:'向右環繞',en:'Orbit Right',pw:2,dur:4.5,vs:['orbit-left','arc-shot'],
+ desc:'相機繞著主體往右轉動，主體維持在畫面中央，背景跟著旋轉。',
+ scene:'英雄登場、產品展示、強調立體感',
+ p:'Camera orbits around the subject to the right, circling smoothly while keeping the subject centered, the background rotating behind them.',
+ z:'相機繞著主體平穩地向右環繞，主體維持在畫面中央，背景跟著旋轉。',
+ core:'orbit around the subject to the right, keeping the subject centered',
+ tip:'左右以相機視角為準。想要不同方向時，兩個方向各生成一次比較。',
+ tags:'環繞 繞圈 右繞 orbit circle revolve around rotate 順時針',
+ cam:e=>({p:orb(6.5,lerp(-10,85,e),1.5),l:C,fov:40})},
+{id:'orbit-360',cat:'orbit',zh:'360 度環繞',en:'360 Orbit',pw:3,dur:7,vs:['arc-shot','drone-orbit'],
+ desc:'繞著主體走完整整一圈，常見於展示與高潮時刻。',
+ scene:'角色亮相、產品展示、高潮定格',
+ p:'Full 360 degree orbit around the subject, smooth circular camera path at a constant distance, the background sweeping past.',
+ z:'繞著主體完整環繞 360 度，距離固定，背景在身後快速掃過。',
+ core:'full 360 degree orbit around the subject at a constant distance',
+ tip:'長時間環繞容易讓主體走樣，建議縮短時長，或分段生成再剪接。',
+ tags:'環繞 一圈 全周 360 full circle orbit revolve 環拍',
+ cam:e=>({p:orb(6.5,lerp(0,-360,e),1.6),l:C,fov:40})},
+{id:'arc-shot',cat:'orbit',zh:'半圓弧形運鏡',en:'Arc Shot',pw:2,dur:5,vs:['orbit-left','truck-lock'],
+ desc:'以半圓形軌跡繞過主體，從一側移動到另一側。',
+ scene:'對話場景、從側面轉到正面、展示表情',
+ p:'Arc shot, the camera sweeps in a smooth semicircle around the subject from left to right at eye level.',
+ z:'弧形運鏡：相機以平視高度，從左到右畫出半圓繞過主體。',
+ core:'arc shot sweeping a smooth semicircle around the subject',
+ tip:'arc 是半圓，orbit 通常是整圈；想要半圈就寫 arc 或 180 degrees。',
+ tags:'弧形 半圓 弧線 arc semicircle 180 curved',
+ cam:e=>({p:orb(6,lerp(-90,90,e),1.5),l:C,fov:40})},
+{id:'spiral-in',cat:'orbit',zh:'螺旋推進',en:'Spiral In',pw:3,dur:5,vs:['orbit-left','dolly-in'],
+ desc:'一邊繞行一邊靠近主體，圓圈越繞越小，張力逐步上升。',
+ scene:'揭曉、情緒累積、聚焦主角',
+ p:'Spiral in, the camera circles the subject while moving closer, the orbit tightening, dramatic build-up toward a close-up.',
+ z:'螺旋推進：相機繞著主體轉，同時逐步靠近，圈子越繞越小，最後停在特寫。',
+ core:'spiral in, circling the subject while moving closer',
+ tip:'同時有「繞」與「推」兩個動作，建議把兩個動作都寫出來。',
+ tags:'螺旋 繞進 靠近 spiral in tightening orbit corkscrew',
+ cam:e=>({p:orb(lerp(11,3.6,e),lerp(0,-220,e),lerp(2.4,1.5,e)),l:C,fov:40})},
+{id:'spiral-up',cat:'orbit',zh:'螺旋上升',en:'Spiral Up',pw:3,dur:5.5,vs:['crane-up','orbit-left'],
+ desc:'繞著主體轉的同時升高，並往下看向主體，最後展開整個場景。',
+ scene:'高潮收尾、場景揭示、史詩感',
+ p:'Spiral crane up, the camera circles the subject while rising higher and looking down at them, revealing the surroundings.',
+ z:'螺旋上升：相機繞著主體轉，同時往上升並俯視主體，逐漸展開整個場景。',
+ core:'spiral upward, circling the subject while rising and looking down',
+ tip:'補上 looking down at the subject，模型比較不會讓主體跑出畫面。',
+ tags:'螺旋 上升 繞升 spiral up crane orbit rise ascend',
+ cam:e=>({p:orb(lerp(7.5,6,e),lerp(0,-270,e),lerp(1.2,7,e)),l:[0,lerp(1.3,0.6,e),0],fov:44})},
+{id:'orbit-low',cat:'orbit',zh:'低角度環繞',en:'Low-Angle Orbit',pw:3,dur:4.5,vs:['low-angle','orbit-left'],
+ desc:'貼近地面繞著主體轉，從下往上看，氣勢十足。',
+ scene:'英雄感、氣場強大的角色、運動與時尚',
+ p:'Low angle orbit, the camera circles close to the ground looking up at the subject, heroic and powerful, wide lens.',
+ z:'低角度環繞：相機貼近地面繞行，仰視主體，廣角鏡頭，氣勢強烈。',
+ core:'low angle orbit close to the ground looking up at the subject',
+ tip:'加上 wide angle lens 能強化仰視的誇張感。',
+ tags:'低角度 仰視 環繞 low angle orbit hero 英雄',
+ cam:e=>({p:orb(5.2,lerp(0,-130,e),0.32),l:[0,lerp(1.5,1.7,e),0],fov:55})},
+{id:'bullet-time',cat:'orbit',zh:'子彈時間',en:'Bullet Time',pw:3,dur:4,vs:['arc-shot','orbit-360'],
+ desc:'主體幾乎凝結在半空中，相機快速繞過，產生時間靜止的錯覺。',
+ scene:'動作高潮、跳躍與打鬥的定格、廣告特效',
+ p:'Bullet time effect, the subject frozen mid-air while the camera sweeps around in a fast half circle, slow motion feel.',
+ z:'子彈時間：人物凝結在半空中，相機快速繞過半圈，有慢動作般的時間靜止感。',
+ core:'bullet time, the subject frozen mid-air while the camera sweeps around',
+ tip:'要明確寫出 frozen in mid-air，並指定主體的動作（跳躍、揮拳）。',
+ tags:'子彈時間 凍結 定格 bullet time freeze matrix 時間靜止',
+ cam:e=>({p:orb(6,lerp(25,-155,e),1.6),l:[0,1.9,0],fov:42,subj:{y:0.8,ry:0.3,pose:'jump'}})},
+
+/* ===== 跟拍 ===== */
+{id:'follow-behind',cat:'track',zh:'後方跟拍',en:'Follow Shot (Behind)',pw:2,dur:5,ease:'lin',vs:['lead-shot','high-follow'],
+ desc:'相機跟在人物後方，保持固定距離一起前進，觀眾像跟著角色走。',
+ scene:'探索、進入場景、追隨主角的旅程',
+ p:'Tracking shot from behind, the camera follows the subject walking forward at a steady distance, over-the-back view of the street ahead.',
+ z:'從後方跟拍，相機與人物保持固定距離前進，看著人物的背影走向前方。',
+ core:'tracking shot from behind, following the subject at a steady distance',
+ tip:'寫出 from behind 與 steady distance，可以避免鏡頭繞到人物正面。',
+ tags:'跟拍 跟隨 背後 follow behind tracking trail 追蹤 背影',
+ cam:e=>{const z=lerp(2,-16,e);return {p:[0,1.9,z+4.6],l:[0,1.4,z],fov:40,subj:walkS(z,2)}}},
+{id:'lead-shot',cat:'track',zh:'前方引導跟拍',en:'Leading Shot',pw:2,dur:5,ease:'lin',vs:['follow-behind','side-track'],
+ desc:'相機在人物前方倒退，人物朝鏡頭走來，可以一直看到臉部表情。',
+ scene:'人物走路的表情、帶出角色性格、廣告與MV',
+ p:'Leading tracking shot, the camera moves backward in front of the subject who walks toward the camera, face visible, steady distance.',
+ z:'前導跟拍：相機在前方倒退，人物朝鏡頭走來，臉部表情清楚可見，距離固定。',
+ core:'leading tracking shot, camera moving backward in front of the walking subject',
+ tip:'寫出 walks toward the camera 與 camera moves backward，方向才不會搞反。',
+ tags:'前導 倒退 迎面 lead shot walk toward camera tracking 前方跟拍',
+ cam:e=>{const z=lerp(-16,2,e);return {p:[0,1.6,z+4.8],l:[0,1.4,z],fov:40,subj:{z:z,ry:0,pose:'walk',ph:(z+16)*4.5}}}},
+{id:'side-track',cat:'track',zh:'側向跟拍',en:'Side Tracking',pw:2,dur:5,ease:'lin',vs:['truck-right','follow-behind'],
+ desc:'相機在人物側面與他並行移動，背景向後快速滑過。',
+ scene:'走路與奔跑、速度感、街頭風格',
+ p:'Side tracking shot, the camera moves alongside the walking subject in profile, the background sliding past.',
+ z:'側面跟拍：相機與人物並行，拍攝人物側臉與側身，背景向後滑過。',
+ core:'side tracking shot alongside the subject in profile',
+ tip:'側拍時背景變化明顯，可以先描述背景，畫面會更豐富。',
+ tags:'側拍 並行 側面 side tracking profile alongside 平行',
+ cam:e=>{const x=lerp(-6.5,6.5,e);return {p:[x,1.5,6.2],l:[x,1.3,0],fov:40,subj:{x:x,ry:Math.PI/2,pose:'walk',ph:(x+6.5)*4.5}}}},
+{id:'chase',cat:'track',zh:'手持追逐',en:'Handheld Chase',pw:3,dur:4,ease:'lin',mb:0.015,shake:{pos:0.06,rot:0.09,f:1.7,roll:1.4},vs:['handheld','follow-behind'],
+ desc:'手持相機跟著奔跑中的人物，畫面劇烈晃動，臨場感十足。',
+ scene:'追逐戲、逃跑、動作片與紀錄片',
+ p:'Handheld chase shot, the camera runs behind the sprinting subject with energetic shaky motion, documentary style, motion blur.',
+ z:'手持追逐：相機在後面跟著奔跑的人物，畫面劇烈晃動，紀錄片風格，帶動態模糊。',
+ core:'handheld chase shot running behind the sprinting subject',
+ tip:'晃動程度可用 slight shake、heavy shake 控制，太強烈時畫面容易崩壞。',
+ tags:'追逐 奔跑 手持 chase run handheld shaky pursuit 跑',
+ cam:e=>{const z=lerp(2,-18,e);return {p:[0,1.6,z+3.4],l:[0,1.3,z-1],fov:52,subj:{z:z,ry:Math.PI,pose:'run',ph:(2-z)*3.2}}}},
+{id:'high-follow',cat:'track',zh:'高位跟拍',en:'High Follow',pw:2,dur:5,ease:'lin',vs:['follow-behind','high-angle'],
+ desc:'相機在人物後上方，以約 45 度俯視跟著走，能看到人物與周圍的關係。',
+ scene:'展現環境、遊戲感視角、守望與孤單',
+ p:'High angle follow shot, the camera trails behind and above the walking subject, looking down at about 45 degrees.',
+ z:'高位跟拍：相機在人物後上方，以約 45 度俯視角跟著人物前進。',
+ core:'high angle follow shot trailing behind and above the walking subject',
+ tip:'可以寫 over-the-shoulder from above 或指定角度 45 degrees。',
+ tags:'高位 俯視跟拍 high follow behind above 後上方 遊戲視角',
+ cam:e=>{const z=lerp(2,-14,e);return {p:[0,5.6,z+6.5],l:[0,1,z-1],fov:44,subj:walkS(z,2)}}},
+{id:'low-track',cat:'track',zh:'低位地面跟拍',en:'Low Tracking',pw:2,dur:5,ease:'lin',vs:['follow-behind','worms-eye'],
+ desc:'相機貼近地面，跟拍人物的腳步，強調行走的節奏與地面質感。',
+ scene:'鞋款與時尚廣告、緊張感、腳步特寫',
+ p:'Low angle tracking shot near the ground following the subject\'s legs and shoes as they walk, shallow depth of field.',
+ z:'低位跟拍：相機貼近地面，跟著人物的腿與鞋子前進，淺景深。',
+ core:'low angle tracking shot near the ground following the subject\'s feet',
+ tip:'寫 ground level 或 shoe level，能讓相機真正貼近地面。',
+ tags:'低位 腳步 地面 low tracking feet shoes ground level 低機位',
+ cam:e=>{const z=lerp(2,-14,e);return {p:[1.5,0.34,z+3.2],l:[0,0.7,z-0.5],fov:52,subj:walkS(z,2)}}},
+
+/* ===== 角度與視角 ===== */
+{id:'eye-level',cat:'angle',zh:'平視',en:'Eye Level',pw:1,dur:4,ease:'lin',vs:['low-angle','high-angle'],
+ desc:'相機與人物眼睛同高，給人自然、中性的感覺，最接近日常視角。',
+ scene:'對話、訪談、紀錄片、需要真實感的畫面',
+ p:'Eye level shot, the camera at the subject\'s eye height, neutral and natural perspective, with a subtle slow push in.',
+ z:'平視角度：相機與人物眼睛同高，視角自然中性，搭配細微的緩慢推進。',
+ core:'eye level shot at the subject\'s eye height',
+ tip:'不特別指定角度時，模型多半會用平視，想要不同感覺再明確寫出角度。',
+ tags:'平視 眼睛高度 eye level neutral 平拍 水平',
+ cam:e=>({p:[0,1.62,lerp(6.4,5.6,e)],l:[0,1.55,0],fov:36})},
+{id:'low-angle',cat:'angle',zh:'仰角',en:'Low Angle',pw:2,dur:4,vs:['worms-eye','high-angle'],
+ desc:'相機放得低，往上看主體，讓人物顯得高大、有力量。',
+ scene:'強者登場、英雄與反派、建築氣勢',
+ p:'Low angle shot, the camera placed low looking up at the subject, making them appear tall and powerful, towering buildings behind.',
+ z:'仰角鏡頭：相機放低往上拍，人物顯得高大有力量，身後是聳立的建築。',
+ core:'low angle shot looking up at the subject',
+ tip:'仰角會讓背景天空佔比變大，可以順便描述天空與雲。',
+ tags:'仰角 仰視 仰拍 low angle look up hero 氣勢',
+ cam:e=>({p:[0.7,0.16,lerp(3.8,2.8,e)],l:[0,1.95,0],fov:62})},
+{id:'high-angle',cat:'angle',zh:'俯角',en:'High Angle',pw:1,dur:4,vs:['birds-eye','low-angle'],
+ desc:'相機放得高，往下看主體，讓人物顯得渺小或脆弱。',
+ scene:'弱勢與孤立、全景展示、監視視角',
+ p:'High angle shot, the camera looks down on the subject from above, making them appear small and vulnerable.',
+ z:'俯角鏡頭：相機從高處往下拍，人物顯得渺小脆弱。',
+ core:'high angle shot looking down on the subject',
+ tip:'角度可用 45 degrees 或 steep 修飾；接近 90 度就是鳥瞰。',
+ tags:'俯角 俯視 俯拍 high angle look down small 渺小',
+ cam:e=>({p:[1.4,lerp(8.6,7.4,e),lerp(6.4,5.6,e)],l:[0,0.8,0],fov:42})},
+{id:'birds-eye',cat:'angle',zh:'鳥瞰（正上方）',en:"Bird's Eye View",pw:2,dur:5,diag:'top',vs:['high-angle','drone-ascend'],
+ desc:'相機在主體正上方垂直往下拍，能看見地面的圖案與人物的位置關係。',
+ scene:'地圖感、幾何構圖、人群與動線展示',
+ p:'Top-down bird\'s eye view directly above the subject, the camera slowly rotating, the ground pattern visible beneath.',
+ z:'鳥瞰視角：相機在人物正上方垂直往下拍，並緩慢旋轉，可看見地面圖案。',
+ core:'top-down bird\'s eye view directly above the subject',
+ tip:'寫 directly above 與 90 degrees looking straight down，能避免斜角。',
+ tags:'鳥瞰 正上方 俯瞰 top down birds eye overhead 垂直俯拍',
+ cam:e=>({p:[0,13,0.001],l:[0,0,0],fov:50,roll:lerp(0,45,e)})},
+{id:'worms-eye',cat:'angle',zh:'蟲視角',en:"Worm's Eye View",pw:2,dur:4,vs:['low-angle','low-track'],
+ desc:'相機貼在地面，近乎垂直往上看，透視極度誇張。',
+ scene:'高樓與天空、誇張的氣勢、風格化畫面',
+ p:'Worm\'s eye view from ground level looking steeply upward at the subject, exaggerated perspective, ultra wide angle lens.',
+ z:'蟲視角：相機貼著地面往上看，透視誇張，使用超廣角鏡頭。',
+ core:'worm\'s eye view from ground level looking steeply upward',
+ tip:'比仰角更極端，建議搭配 wide angle 並說明主體在畫面中的位置。',
+ tags:'蟲視 地面 極低 worms eye ground level steep up 貼地',
+ cam:e=>({p:[0.3,0.06,lerp(3.0,2.2,e)],l:[0,2.5,0],fov:72})},
+{id:'ots',cat:'angle',zh:'過肩鏡頭',en:'Over-the-Shoulder',pw:1,dur:4,vs:['eye-level','rack-focus'],
+ desc:'相機放在前景人物的肩膀後方，看向對面的人物，常用於對話場景。',
+ scene:'雙人對話、談判、訪談',
+ p:'Over-the-shoulder shot, the camera behind a foreground person\'s shoulder looking at the subject facing them, shallow depth of field.',
+ z:'過肩鏡頭：相機位於前景人物的肩後，望向面對面的主體，淺景深。',
+ core:'over-the-shoulder shot from behind a foreground person',
+ tip:'要寫明前景人物是背對鏡頭，否則模型可能把兩個人都放在正面。',
+ tags:'過肩 對話 肩膀 over the shoulder ots dialogue 肩後',
+ cam:e=>({p:[0.35,1.8,lerp(5.9,5.4,e)],l:[0.55,1.55,0],fov:34,subj:{x:0.55,z:0,ry:0},figs:[{x:-0.55,z:4.6,ry:Math.PI,pal:'violet'}]})},
+{id:'pov',cat:'angle',zh:'第一人稱視角',en:'POV',pw:2,dur:5,ease:'lin',diag:'top',vs:['follow-behind','handheld'],
+ desc:'相機就是角色的眼睛，帶著自然的步伐起伏往前走。',
+ scene:'遊戲感、沉浸體驗、恐怖片、運動相機',
+ p:'First-person POV shot, the camera is the character\'s eyes walking forward with natural head bob, approaching a person ahead.',
+ z:'第一人稱視角：相機就是角色的眼睛，帶著自然的步伐起伏，走向前方的人。',
+ core:'first-person POV walking forward with natural head bob',
+ tip:'寫 as if seen through the character\'s eyes，並說明走向哪裡。',
+ tags:'第一人稱 主觀 pov first person eyes 沉浸 主觀鏡頭',
+ cam:e=>{const z=lerp(9,-2.2,e),bob=Math.sin(e*Math.PI*16)*0.035,sw=Math.sin(e*Math.PI*8)*0.05;return {p:[sw,1.66+bob,z],l:[sw*2,1.55,z-10],fov:62,subj:null,figs:[{x:0,z:-6.5,ry:0,pal:'green'}]}}},
+
+/* ===== 升降與空拍 ===== */
+{id:'crane-up',cat:'crane',zh:'搖臂上升',en:'Crane Up',pw:2,dur:5,vs:['pedestal-up','drone-ascend'],
+ desc:'相機像裝在搖臂上緩緩升高，同時低頭看向主體，展開更大的場景。',
+ scene:'開場與結尾、場景揭示、史詩感',
+ p:'Crane up, the camera rises smoothly on a crane arm while tilting down toward the subject, revealing the wider scene.',
+ z:'搖臂上升：相機緩緩升高，同時向下看著主體，逐漸展開更大的場景。',
+ core:'crane up while tilting down toward the subject',
+ tip:'crane 會同時改變高度與角度，和單純升高的 pedestal 不一樣。',
+ tags:'搖臂 升高 上升 crane up jib boom rise 吊臂',
+ cam:e=>({p:[0,lerp(0.9,9,e),lerp(6.5,10.5,e)],l:[0,lerp(1.4,0.8,e),0],fov:42})},
+{id:'crane-down',cat:'crane',zh:'搖臂下降',en:'Crane Down',pw:2,dur:5,vs:['pedestal-down','tilt-down'],
+ desc:'相機從高處緩緩降下，最後落在人物的高度與主體對視。',
+ scene:'從遠景切入角色、開場、落地感',
+ p:'Crane down, the camera descends smoothly from a high wide view to eye level with the subject.',
+ z:'搖臂下降：相機從高處的遠景緩緩降下，最後停在與人物平視的高度。',
+ core:'crane down from a high wide view to eye level',
+ tip:'先寫高處看到的畫面，再寫降到哪個高度。',
+ tags:'搖臂 下降 降下 crane down jib boom descend 吊臂',
+ cam:e=>({p:[0,lerp(9,0.9,e),lerp(10.5,6.5,e)],l:[0,lerp(0.8,1.4,e),0],fov:42})},
+{id:'drone-ascend',cat:'crane',zh:'空拍垂直升空',en:'Drone Rise',pw:2,dur:5,vs:['crane-up','aerial-pullback'],
+ desc:'空拍機垂直上升，往下看著主體，整座城市在下方逐漸展開。',
+ scene:'風景開場、地標、旅遊與房產影片',
+ p:'Aerial drone shot rising straight up, the camera ascending vertically while looking down at the subject, the city spreading out below.',
+ z:'空拍機垂直升空，鏡頭往下看著主體，整座城市在下方逐漸展開。',
+ core:'aerial drone shot rising straight up while looking down',
+ tip:'寫 aerial drone shot，模型比較容易採用空拍的畫面質感與視角。',
+ tags:'空拍 升空 垂直 drone rise ascend aerial 無人機',
+ cam:e=>({p:[0,lerp(2.5,42,e),lerp(5.5,9,e)],l:[0,lerp(1.4,0,e),0],fov:52})},
+{id:'drone-flyover',cat:'crane',zh:'空拍飛越',en:'Aerial Flyover',pw:3,dur:5,ease:'lin',diag:'top',vs:['drone-flyover','drone-ascend'],
+ desc:'空拍機在高處向前飛行，鏡頭稍微向下，掠過整個場景。',
+ scene:'城市與風景、開場空景、旅遊短片',
+ p:'Aerial flyover, a drone flies forward at height over the plaza with the camera angled slightly downward, smooth fast forward motion.',
+ z:'空拍飛越：空拍機在高處向前飛行，鏡頭略微朝下，平穩快速地掠過廣場。',
+ core:'aerial flyover, drone flying forward at height with the camera angled down',
+ tip:'補上 flying forward 與飛行高度，例如 low altitude 或 high altitude。',
+ tags:'空拍 飛越 掠過 aerial flyover drone forward fly over 飛行',
+ cam:e=>{const z=lerp(38,-20,e);return {p:[0,18,z],l:[0,11,z-16],fov:58}}},
+{id:'drone-orbit',cat:'crane',zh:'空拍環繞',en:'Drone Orbit',pw:2,dur:6,vs:['orbit-360','spiral-up'],
+ desc:'空拍機在高處繞著主體或地標轉圈，鏡頭約向下 40 度。',
+ scene:'地標展示、房產、建築與風景',
+ p:'Drone orbit shot, the camera circles the subject from high above at a 40 degree downward angle, wide scenic view.',
+ z:'空拍環繞：空拍機從高處繞著主體轉圈，鏡頭約向下 40 度，視野寬廣。',
+ core:'drone orbit circling the subject from high above',
+ tip:'環繞高度與下傾角度寫清楚，畫面比較穩定。',
+ tags:'空拍 環繞 繞圈 drone orbit aerial circle 無人機 地標',
+ cam:e=>({p:orb(24,lerp(0,-200,e),15),l:[0,0.5,0],fov:46})},
+{id:'fpv-dive',cat:'crane',zh:'FPV 俯衝',en:'FPV Dive',pw:3,dur:4,ease:'in',mb:0.02,shake:{pos:0.05,rot:0.05,f:2.2,roll:1.2},vs:['drone-flyover','drone-ascend'],
+ desc:'穿越機視角，從高空快速俯衝向主體，速度感與臨場感極強。',
+ scene:'運動廣告、動作片、高速穿梭',
+ p:'FPV drone dive, the camera swoops down fast from high above toward the subject, ultra wide angle, aggressive speed with slight roll.',
+ z:'FPV 俯衝：相機從高空快速向下衝向主體，超廣角，速度感強並帶輕微翻滾。',
+ core:'FPV drone dive swooping down fast toward the subject',
+ tip:'加上 FPV、fast、wide angle，能讓速度感更明確。',
+ tags:'FPV 穿越機 俯衝 dive fpv drone swoop fast 高速',
+ cam:e=>({p:[lerp(-16,0,e),lerp(32,2.4,e),lerp(22,5.2,e)],l:C,fov:74,roll:Math.sin(e*14)*9*(1-e)})},
+{id:'aerial-pullback',cat:'crane',zh:'空拍拉遠揭示',en:'Aerial Pull-Back Reveal',pw:2,dur:5.5,vs:['dolly-out','drone-ascend'],
+ desc:'從主體特寫開始，往後也往上飛，揭示整個場景的規模。',
+ scene:'結尾收束、規模感、「原來是在這裡」的驚喜',
+ p:'Drone pull back reveal, starting close on the subject then flying backward and upward to reveal the entire city plaza.',
+ z:'空拍拉遠揭示：從人物近景開始，往後也往上飛，露出整個廣場與城市。',
+ core:'drone pull back reveal, flying backward and upward from the subject',
+ tip:'先寫起始的近景，再寫最後揭示出的大場景。',
+ tags:'拉遠 揭示 後退 升空 aerial pull back reveal drone retreat',
+ cam:e=>({p:[0,lerp(3,34,e),lerp(3.6,36,e)],l:[0,lerp(1.5,0,e),0],fov:52})},
+
+/* ===== 風格運鏡 ===== */
+{id:'handheld',cat:'style',zh:'手持晃動',en:'Handheld',pw:2,dur:4,ease:'lin',shake:{pos:0.07,rot:0.12,f:1.0,roll:0.9},vs:['steadicam','static'],
+ desc:'模擬攝影師手持相機的自然晃動，帶來真實的臨場感與紀錄片質感。',
+ scene:'紀錄片、真實感、緊張場面、VLOG',
+ p:'Handheld camera, natural subtle shake and breathing movement, documentary realism, slightly imperfect framing.',
+ z:'手持鏡頭：帶有自然的輕微晃動與呼吸感，紀錄片的真實質感，構圖略帶不完美。',
+ core:'handheld camera with natural subtle shake and breathing movement',
+ tip:'晃動強度請寫 subtle、slight 或 heavy，避免畫面搖得太劇烈。',
+ tags:'手持 晃動 紀錄片 handheld shaky documentary vlog 呼吸',
+ cam:e=>({p:[0,1.5,6.2],l:C,fov:40})},
+{id:'steadicam',cat:'style',zh:'穩定器滑行',en:'Steadicam Glide',pw:2,dur:6,diag:'top',vs:['handheld','follow-behind'],
+ desc:'像漂浮般流暢地繞著行走的人物滑行，沒有晃動，卻有生命力。',
+ scene:'長鏡頭、舞台與走廊、電影質感',
+ p:'Steadicam shot, the camera glides smoothly around the walking subject in a flowing curved path, fluid and weightless.',
+ z:'穩定器鏡頭：相機像漂浮一樣，沿著流暢的弧線繞著行走的人物滑行。',
+ core:'steadicam glide around the walking subject in a flowing curved path',
+ tip:'用 fluid、weightless、gliding 這類詞，能避免畫面抖動。',
+ tags:'穩定器 滑行 流暢 steadicam glide smooth gimbal 長鏡頭',
+ cam:e=>{const z=lerp(3,-8,e);return {p:orb(4.2,lerp(-25,-160,e),1.55,[0,0,z]),l:[0,1.35,z],fov:40,subj:walkS(z,3)}}},
+{id:'static',cat:'style',zh:'固定鏡頭',en:'Locked-Off',pw:1,dur:5,ease:'lin',diag:'top',vs:['handheld','pan-right'],
+ desc:'相機穩穩架在腳架上完全不動，讓人物在畫面中自行移動。',
+ scene:'對話、喜劇、靜態氛圍、強調構圖',
+ p:'Static locked-off camera on a tripod, no camera movement, the subject walks across the frame.',
+ z:'固定鏡頭：相機架在腳架上完全不動，人物自己走過畫面。',
+ core:'static locked-off camera, no camera movement',
+ tip:'想完全不動請寫 no camera movement，否則模型常會自己加上推拉。',
+ tags:'固定 不動 腳架 static locked off tripod no movement 靜止',
+ cam:e=>{const x=lerp(-7,7,e);return {p:[0,1.4,9.5],l:[0,1.3,0],fov:38,subj:{x:x,ry:Math.PI/2,pose:'walk',ph:(x+7)*4.5}}}},
+{id:'rack-focus',cat:'style',zh:'焦點轉移',en:'Rack Focus',pw:2,dur:4.5,ease:'lin',vs:['ots','slow-push'],
+ desc:'焦點由前景物體轉移到後方的主體，視線被引導到新的重點。',
+ scene:'引導視線、揭示線索、浪漫與懸疑',
+ p:'Rack focus, the focus shifts from the blurred foreground object to the sharp subject in the background, shallow depth of field.',
+ z:'焦點轉移：焦點從前景物體移到後方的主體，淺景深，視線被引導過去。',
+ core:'rack focus from a foreground object to the subject behind',
+ tip:'一定要寫出前景是什麼、後景是什麼，焦點才有地方可以轉。',
+ tags:'焦點 對焦 轉焦 rack focus pull focus shallow depth blur 景深',
+ cam:e=>({p:[0,1.45,3.7],l:[0,1.3,0],fov:40,dof:seg(e,0.25,0.7),props:[
+  {type:'pot',x:-0.55,y:0.26,z:2.1,fg:true},{type:'post',x:0.62,y:1.0,z:2.6,r:0.12,h:2,col:[120,128,150],fg:true}]})},
+{id:'reveal',cat:'style',zh:'遮擋揭示',en:'Reveal Shot',pw:2,dur:5,ease:'lin',vs:['push-through','dolly-in'],
+ desc:'前景的遮擋物移開，同時相機緩慢推進，露出藏在後面的主體。',
+ scene:'角色登場、驚喜揭曉、廣告產品亮相',
+ p:'Reveal shot, a foreground wall slides away as the camera slowly pushes in, revealing the subject standing behind it.',
+ z:'揭示鏡頭：前景的牆緩緩滑開，相機同時慢慢推進，露出站在後面的人物。',
+ core:'reveal shot, a foreground wall sliding away to reveal the subject',
+ tip:'先寫遮擋物，再寫「移開後出現什麼」，順序要清楚。',
+ tags:'揭示 遮擋 露出 reveal uncover wall slide 亮相',
+ cam:e=>({p:[0,1.5,lerp(9.5,7.4,e)],l:C,fov:40,props:[{type:'box',x:lerp(0,6.8,seg(e,0.15,0.75)),y:1.5,z:3.2,sx:3.4,sy:3.1,sz:0.5,col:[96,102,122]}]})},
+
+/* ===== 組合運鏡 ===== */
+{id:'push-tilt',cat:'combo',zh:'推進接上仰',en:'Dolly In + Tilt Up',pw:2,dur:6,ease:'lin',vs:['dolly-in','tilt-up'],
+ desc:'先推向主體，再向上仰起，視線從人物帶到天空。',
+ scene:'從人物帶到情境、抬頭望向遠方',
+ p:'The camera dollies in toward the subject, then tilts up to reveal the sky above.',
+ z:'相機先向主體推進，接著向上仰起，露出上方的天空。',
+ core:'dolly in toward the subject, then tilt up to reveal the sky',
+ tip:'兩個動作用 then 連接，並按照順序寫，模型比較不容易混在一起。',
+ tags:'組合 推進 上仰 combo dolly tilt then',
+ cam:e=>{const z=lerp(10,4.6,seg(e,0,0.55)),p=[0,1.5,z];return {p,l:[0,lerp(1.25,5.2,seg(e,0.5,1)),0],fov:42}}},
+{id:'pull-pan',cat:'combo',zh:'拉出接橫搖',en:'Dolly Out + Pan',pw:2,dur:6,ease:'lin',vs:['dolly-out','pan-left'],
+ desc:'先從主體後拉，再向左橫搖，帶出旁邊的另一個人。',
+ scene:'從一個角色帶到另一個角色、交代人物關係',
+ p:'The camera dollies out from the subject, then pans left to reveal a second person standing nearby.',
+ z:'相機先從主體後拉，接著向左橫搖，露出站在旁邊的另一個人。',
+ core:'dolly out from the subject, then pan left to reveal a second person',
+ tip:'要寫出第二個人的位置，例如 standing on the left。',
+ tags:'組合 後拉 橫搖 combo dolly out pan then reveal',
+ cam:e=>{const z=lerp(3.8,9.5,seg(e,0,0.5)),yaw=lerp(0,-39.5,seg(e,0.5,1));return {p:[0,1.5,z],l:[Math.sin(yaw*RAD)*10,1.3,z-Math.cos(yaw*RAD)*10],fov:42,figs:[{x:-7,z:1,ry:0.7,pal:'blue'}]}}},
+{id:'orbit-pullback',cat:'combo',zh:'環繞接拉遠',en:'Orbit + Pull Back',pw:3,dur:6.5,ease:'lin',vs:['orbit-left','aerial-pullback'],
+ desc:'先繞著主體轉，再往後上方拉遠，露出整個場景。',
+ scene:'高潮收尾、全景揭示',
+ p:'The camera orbits the subject 120 degrees, then pulls back and rises to reveal the whole plaza.',
+ z:'相機先繞著主體環繞 120 度，接著向後拉遠並升高，露出整個廣場。',
+ core:'orbit the subject, then pull back and rise to reveal the whole scene',
+ tip:'把角度或距離寫清楚，例如 120 degrees，效果會更接近預期。',
+ tags:'組合 環繞 拉遠 combo orbit pull back then reveal',
+ cam:e=>({p:orb(lerp(5.5,14,seg(e,0.5,1)),lerp(0,-120,seg(e,0,0.55))+lerp(0,-30,seg(e,0.55,1)),lerp(1.5,7,seg(e,0.5,1))),l:C,fov:40})},
+{id:'truck-lock',cat:'combo',zh:'橫移鎖定主體',en:'Truck + Keep Subject',pw:2,dur:5,vs:['truck-right','arc-shot'],
+ desc:'相機橫向移動，同時轉動鏡頭讓主體始終留在畫面中央。',
+ scene:'人物展示、背景變化強烈的場景',
+ p:'The camera trucks to the right while panning to keep the subject centered in frame, smooth lateral tracking with changing background.',
+ z:'相機向右平移，同時轉動鏡頭讓主體維持在畫面中央，背景隨之變化。',
+ core:'truck right while panning to keep the subject centered',
+ tip:'寫 keep the subject centered，模型才會同時處理平移與轉動。',
+ tags:'組合 橫移 鎖定 combo truck pan keep centered track',
+ cam:e=>({p:[lerp(-5.5,5.5,e),1.5,8],l:C,fov:36})},
+{id:'crane-push',cat:'combo',zh:'俯衝推近',en:'Crane Down + Dolly In',pw:2,dur:5,vs:['crane-down','dolly-in'],
+ desc:'相機一邊下降一邊推進，從高處全景落到人物的中近景。',
+ scene:'開場進入角色、從環境切入人物',
+ p:'The camera descends on a crane while dollying in toward the subject, from a high wide view down to a medium shot.',
+ z:'相機一邊沿搖臂下降、一邊向主體推進，從高處全景落到中景。',
+ core:'crane down while dollying in, from a high wide view to a medium shot',
+ tip:'起點與終點都寫清楚（high wide view → medium shot）。',
+ tags:'組合 下降 推進 combo crane dolly descend push',
+ cam:e=>({p:[0,lerp(8,1.5,e),lerp(14,4.6,e)],l:[0,lerp(0.8,1.3,e),0],fov:42})},
+{id:'whip-push',cat:'combo',zh:'甩鏡接推進',en:'Whip Pan + Push In',pw:3,dur:6,ease:'lin',mb:0.03,vs:['whip-pan','dolly-in'],
+ desc:'先快速甩鏡到主體身上，接著慢慢推進成特寫，節奏一快一慢。',
+ scene:'轉場進入新場景、節奏切換、廣告開場',
+ p:'A fast whip pan lands on the subject, followed by a slow dolly in to a close-up.',
+ z:'先快速甩鏡到主體身上，接著緩慢推進，停在特寫。',
+ core:'fast whip pan landing on the subject, then a slow dolly in to a close-up',
+ tip:'「快」與「慢」要分別寫在對應的動作前面。',
+ tags:'組合 甩鏡 推進 combo whip pan dolly then fast slow',
+ cam:e=>{const p=[0,1.5,lerp(9,4.8,seg(e,0.5,1))];return {p,l:addv(p,dirv(lerp(-35,0,EASE.cub(clamp((e-0.1)/0.28,0,1))),-1,10)),fov:42,figs:[{x:-7,z:-1,ry:0.7,pal:'blue'}]}}},
+];
+
+/* ================= UI ================= */
+const $=s=>document.querySelector(s);
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const BY={};MOVES.forEach(m=>BY[m.id]=m);
+const CATBY={};CATS.forEach(c=>CATBY[c.id]=c);
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const S={cat:'all',q:'',pw:0,fav:new Set(LS.get('cam.fav',[])),favOnly:false,paused:RM,den:LS.get('cam.den','m'),
+  build:Object.assign({sub:'',scn:'',moves:[],spd:'',lns:'',sty:''},LS.get('cam.build',{})),cur:null,list:[]};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function setHash(h){try{history.replaceState(null,'',h||(location.pathname+location.search))}catch(e){}}
+function toast(t){const e=$('#toast');e.textContent=t;try{if(!e.matches(':popover-open'))e.showPopover()}catch(_){}e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>{e.classList.remove('show');try{e.hidePopover()}catch(_){}},1600)}
+async function copy(text,msg){
+  try{await navigator.clipboard.writeText(text)}catch(e){
+    const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy')}catch(_){toast('請長按文字手動複製');ta.remove();return}ta.remove()}
+  toast(msg||'已複製 ✓');
+}
+function variants(m){return{
+  std:{en:m.p,zh:m.z},
+  short:{en:cap(m.core)+'.',zh:'精簡版：只保留運鏡關鍵詞，適合接在你自己的主體與場景描述後面使用。'},
+  long:{en:m.p+' Smooth stable camera path, consistent subject and background, natural motion, cinematic lighting, 24fps film look, high detail.',zh:m.z+'畫面穩定、主體與背景保持一致、動作自然、電影感打光、24fps 電影質感、細節豐富。'}}}
+const dots=n=>'<span class="int" title="動感強度">'+[1,2,3].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')+'</span>';
+const PWN=['','平穩','明顯','強烈'];
+
+/* ---- 篩選 ---- */
+function norm(s){return s.toLowerCase().replace(/[臺]/g,'台')}
+function filtered(){
+  const terms=norm(S.q).split(/\s+/).filter(Boolean);
+  return MOVES.filter(m=>{
+    if(S.cat!=='all'&&m.cat!==S.cat)return false;
+    if(S.pw&&m.pw!==S.pw)return false;
+    if(S.favOnly&&!S.fav.has(m.id))return false;
+    if(terms.length){const h=norm([m.zh,m.en,m.id,m.tags,m.desc,m.scene,m.core].join(' '));if(!terms.every(t=>h.includes(t)))return false}
+    return true});
+}
+
+/* ---- 卡片預覽管理 ---- */
+const cards=new Map();let io=null;
+function setupIO(){if(io)io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{const c=cards.get(e.target);if(c){c.vis=e.isIntersecting;if(c.vis&&!c.drawn){c.pv.setProgress(0.62);c.pv.draw();c.drawn=true;c.pv.manual=null}}}),{rootMargin:'120px'})}
+function render(){
+  cards.forEach(c=>{});cards.clear();setupIO();
+  const list=filtered();S.list=list;
+  const main=$('#main');main.innerHTML='';
+  $('#main').style.setProperty('--min',{l:'400px',m:'290px',s:'220px'}[S.den]);
+  if(!list.length){main.innerHTML='<div class="empty">找不到符合的運鏡。<br>換個關鍵字，或<a href="#" id="clr">清除篩選</a>試試。</div>';const c=$('#clr');if(c)c.onclick=e=>{e.preventDefault();clearFilters()};updateChips();return}
+  CATS.forEach(cat=>{
+    const ms=list.filter(m=>m.cat===cat.id);if(!ms.length)return;
+    const sec=document.createElement('section');sec.className='sec';sec.id='c-'+cat.id;
+    sec.innerHTML=`<h2>${cat.zh}<small class="en">${cat.en} ・ ${ms.length} 種</small></h2><p class="d">${cat.desc}</p><div class="grid"></div>`;
+    const g=sec.querySelector('.grid');
+    ms.forEach(m=>g.appendChild(makeCard(m)));
+    main.appendChild(sec);
+  });
+  updateChips();
+}
+function makeCard(m){
+  const el=document.createElement('article');el.className='card';el.dataset.id=m.id;
+  el.innerHTML=`<div class="pv" role="button" tabindex="0" aria-label="查看 ${esc(m.zh)} 詳情"><canvas width="360" height="203"></canvas><span class="tag">${CATBY[m.cat].zh}</span><span class="pp">▶</span></div>
+  <div class="bd"><h3>${esc(m.zh)}<small>${esc(m.en)} ${dots(m.pw)}</small></h3><p>${esc(m.desc)}</p>
+  <div class="ft"><button class="btn sm pri cp">複製提示詞</button><button class="btn sm favb ${S.fav.has(m.id)?'on':''}" aria-label="收藏" title="收藏">♥</button><button class="btn sm ad" title="加入組合器">＋</button></div></div>`;
+  const cv=el.querySelector('canvas'),pv=new Preview(cv,{hud:true,map:true,mapScale:0.3});pv.resize(360,203);pv.setMove(m);pv.clock=Math.random()*pv.cyc().tot;pv.speed=1;
+  const c={pv,vis:false,drawn:false,el,m};cards.set(el,c);io.observe(el);
+  const open=()=>openModal(m.id);
+  el.querySelector('.pv').onclick=open;el.querySelector('.pv').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
+  el.querySelector('.cp').onclick=()=>copy(m.p,'已複製：'+m.zh);
+  el.querySelector('.favb').onclick=e=>{toggleFav(m.id);e.currentTarget.classList.toggle('on',S.fav.has(m.id))};
+  el.querySelector('.ad').onclick=()=>{addToBuild(m.id)};
+  el.addEventListener('mouseenter',()=>{c.hover=true});el.addEventListener('mouseleave',()=>{c.hover=false});
+  return el;
+}
+function updateChips(){
+  const base=MOVES.filter(m=>(!S.pw||m.pw===S.pw)&&(!S.favOnly||S.fav.has(m.id)));
+  const cnt=c=>base.filter(m=>c==='all'||m.cat===c).length;
+  $('#chips').innerHTML=`<button class="chip ${S.cat==='all'?'on':''}" data-c="all">全部<small>${cnt('all')}</small></button>`+CATS.map(c=>`<button class="chip ${S.cat===c.id?'on':''}" data-c="${c.id}">${c.zh}<small>${cnt(c.id)}</small></button>`).join('');
+  $('#chips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{S.cat=b.dataset.c;render();if(S.cat!=='all')document.getElementById('list').scrollIntoView({behavior:'smooth'})});
+}
+function clearFilters(){S.cat='all';S.q='';S.pw=0;S.favOnly=false;$('#q').value='';$('#fPw').value='0';$('#bFav').classList.remove('on');render()}
+function toggleFav(id){S.fav.has(id)?S.fav.delete(id):S.fav.add(id);LS.set('cam.fav',[...S.fav]);const n=S.fav.size,b=$('#fCnt');b.textContent=n;b.hidden=!n;
+  if(S.favOnly&&!S.fav.has(id))render();
+  if(S.cur===id)$('#mFav').classList.toggle('on',S.fav.has(id))}
+
+/* ---- 主迴圈 ---- */
+const hero={pv:null,idx:0,ids:['orbit-360','dolly-zoom','crane-up','follow-behind','bullet-time','drone-flyover','rack-focus','dolly-in'],prev:0};
+let dlgOpen=0;const MP={pv:null};const CMP={a:null,b:null,on:false,paused:false};
+let last=performance.now(),acc=0,selT=0,active=new Set();
+function pickActive(){
+  const vh=innerHeight,arr=[];cards.forEach((c,el)=>{if(!c.vis)return;const r=el.getBoundingClientRect();arr.push({c,d:Math.abs(r.top+r.height/2-vh/2)-(c.hover?9999:0)})});
+  arr.sort((a,b)=>a.d-b.d);active=new Set(arr.slice(0,6).map(x=>x.c));
+}
+function frame(now){
+  const dt=Math.min(0.1,(now-last)/1000);last=now;acc+=dt;
+  if(acc>=1/30){const d=acc;acc=0;
+    if(dlgOpen){
+      if(MP.pv&&$('#dM').open){const pv=MP.pv;if(!pv.paused&&pv.manual==null){pv.tick(d);if(!seeking)$('#mSeek').value=Math.round(pv.progress()*1000)}pv.draw()}
+      if(CMP.on){[CMP.a,CMP.b].forEach(p=>{if(!CMP.paused)p.tick(d);p.draw()})}
+    }else{
+      if(!hero.pv.paused){hero.pv.tick(d);if(hero.pv.clock<hero.prev)nextHero();hero.prev=hero.pv.clock}hero.pv.draw();
+      selT-=d;if(selT<=0){pickActive();selT=0.3}
+      cards.forEach(c=>{if(!c.vis)return;if(S.paused||!active.has(c)){if(!c.drawn){c.pv.setProgress(0.62);c.pv.draw();c.drawn=true;c.pv.manual=null}return}c.pv.manual=null;c.pv.tick(d);c.pv.draw()});
+    }
+  }
+  requestAnimationFrame(frame);
+}
+function showHero(){const m=BY[hero.ids[hero.idx]];hero.pv.setMove(m);hero.prev=0;$('#hName').textContent=m.zh;$('#hEn').textContent=m.en;$('#hP').textContent=m.p;hero.m=m}
+function nextHero(){hero.idx=(hero.idx+1)%hero.ids.length;showHero()}
+
+/* ---- 詳情 ---- */
+let seeking=false,curVar='std';
+function openModal(id,noHash){
+  const m=BY[id];if(!m)return;S.cur=id;curVar='std';
+  if(!MP.pv){MP.pv=new Preview($('#mCv'),{hud:true,map:true,mapScale:0.28});MP.pv.resize(800,450)}
+  const pv=MP.pv;pv.setMove(m);pv.paused=false;pv.speed=+$('#mSpd').value;$('#mPlay').textContent='暫停';
+  $('#mName').textContent=m.zh;$('#mEn').innerHTML=esc(m.en)+' ・ '+CATBY[m.cat].zh+' ・ 強度 '+dots(m.pw)+' '+PWN[m.pw];
+  $('#mDesc').textContent=m.desc;$('#mScene').textContent=m.scene;$('#mTip').innerHTML='<b>小提醒</b>　'+esc(m.tip);
+  $('#mVs').innerHTML=(m.vs||[]).filter(v=>BY[v]&&v!==m.id).map(v=>`<button class="btn sm" data-g="${v}">${esc(BY[v].zh)}</button><button class="tgl" data-cmp="${v}" title="並排比較">⇄</button>`).join('')||'<span style="color:var(--mut)">—</span>';
+  $('#mVs').querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>openModal(b.dataset.g));
+  $('#mVs').querySelectorAll('[data-cmp]').forEach(b=>b.onclick=()=>openCompare(m.id,b.dataset.cmp));
+  setVar('std');$('#mFav').classList.toggle('on',S.fav.has(id));
+  if(!$('#dM').open){$('#dM').showModal();dlgOpen++}
+  if(!noHash)setHash('#m='+id);
+}
+function setVar(v){curVar=v;const m=BY[S.cur],x=variants(m)[v];$('#mEnP').textContent=x.en;$('#mZhP').textContent=x.zh;$('#mTabs').querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v))}
+function step(dir){const ids=(S.list.length?S.list:MOVES).map(m=>m.id);let i=ids.indexOf(S.cur);if(i<0)i=0;openModal(ids[(i+dir+ids.length)%ids.length])}
+function closeModal(){const d=$('#dM');if(d.open)d.close()}
+$('#dM').addEventListener('close',()=>{dlgOpen=Math.max(0,dlgOpen-1);setHash('')});
+$('#mClose').onclick=closeModal;$('#mPrev').onclick=()=>step(-1);$('#mNext').onclick=()=>step(1);
+$('#mTabs').onclick=e=>{const t=e.target.closest('.tab');if(t)setVar(t.dataset.v)};
+$('#mCopy').onclick=()=>copy(variants(BY[S.cur])[curVar].en,'已複製英文提示詞');
+$('#mCopyZ').onclick=()=>copy(variants(BY[S.cur])[curVar].zh,'已複製中文說明');
+$('#mFav').onclick=()=>toggleFav(S.cur);
+$('#mAdd').onclick=()=>addToBuild(S.cur);
+$('#mLink').onclick=()=>copy((location.protocol.startsWith('http')?location.origin+location.pathname:location.href.split('#')[0])+'#m='+S.cur,'已複製連結');
+$('#mPlay').onclick=()=>{const p=MP.pv;p.paused=!p.paused;if(!p.paused)p.manual=null;$('#mPlay').textContent=p.paused?'播放':'暫停'};
+$('#mSpd').onchange=e=>{MP.pv.speed=+e.target.value};
+const seek=$('#mSeek');
+seek.addEventListener('input',()=>{seeking=true;MP.pv.setProgress(seek.value/1000)});
+seek.addEventListener('change',()=>{seeking=false;if(!MP.pv.paused)MP.pv.manual=null});
+[['tMap','map'],['tGrid','grid'],['tLet','letter'],['tHud','hud']].forEach(([id,k])=>{$('#'+id).onclick=e=>{MP.pv.o[k]=!MP.pv.o[k];e.currentTarget.classList.toggle('on',MP.pv.o[k])}});
+$('#dM').addEventListener('click',e=>{if(e.target===$('#dM'))closeModal()});
+
+/* ---- 組合器 ---- */
+function saveBuild(){LS.set('cam.build',S.build)}
+function addToBuild(id){if(S.build.moves.length>=5){toast('最多 5 個運鏡');return}S.build.moves.push(id);saveBuild();renderBuild();toast('已加入組合器：'+BY[id].zh)}
+function buildText(){
+  const b=S.build,ms=b.moves.map(id=>BY[id]);
+  const head=[b.sub,b.scn].filter(Boolean).join(', ');
+  let cam='';if(ms.length)cam='Camera: '+ms.map(m=>m.core).join(', then ')+'.';
+  const tail=[b.spd&&cap(b.spd)+' camera movement',b.lns,b.sty].filter(Boolean).join(', ');
+  return [head&&cap(head)+'.',cam,tail&&cap(tail)+'.'].filter(Boolean).join(' ');
+}
+function renderBuild(){
+  const b=S.build;$('#bSub').value=b.sub;$('#bScn').value=b.scn;$('#bSpd').value=b.spd;$('#bLns').value=b.lns;$('#bSty').value=b.sty;
+  $('#bList').innerHTML=b.moves.length?b.moves.map((id,i)=>`<div class="mvi"><span class="no">${i+1}</span><b>${esc(BY[id].zh)}</b><span class="en" style="color:var(--mut);font-size:13px">${esc(BY[id].en)}</span><span class="x"><button class="tgl" data-a="up" data-i="${i}" aria-label="上移">↑</button><button class="tgl" data-a="dn" data-i="${i}" aria-label="下移">↓</button><button class="tgl" data-a="rm" data-i="${i}" aria-label="移除">✕</button></span></div>`).join(''):'<div style="color:var(--mut);font-size:14px">尚未加入運鏡。可用上方選單，或在卡片上按「＋」。</div>';
+  $('#bOut').textContent=buildText()||'（先輸入主體或加入運鏡，這裡會自動組合成完整提示詞）';
+  const z=[b.sub&&'主體：'+b.sub,b.scn&&'場景：'+b.scn,b.moves.length&&'運鏡：'+b.moves.map(id=>BY[id].zh).join(' → '),b.spd&&'速度：'+$('#bSpd').selectedOptions[0].text,b.lns&&'鏡頭：'+$('#bLns').selectedOptions[0].text,b.sty&&'風格：'+$('#bSty').selectedOptions[0].text].filter(Boolean);
+  $('#bZh').textContent=z.join('　｜　');
+  const n=b.moves.length,bc=$('#bCnt');bc.textContent=n;bc.hidden=!n;
+}
+$('#bBuild').onclick=()=>{renderBuild();$('#dB').showModal();dlgOpen++};
+$('#bClose').onclick=()=>$('#dB').close();
+$('#dB').addEventListener('close',()=>{dlgOpen=Math.max(0,dlgOpen-1)});
+$('#dB').addEventListener('click',e=>{if(e.target===$('#dB'))$('#dB').close()});
+[['bSub','sub'],['bScn','scn'],['bSpd','spd'],['bLns','lns'],['bSty','sty']].forEach(([id,k])=>{$('#'+id).addEventListener('input',e=>{S.build[k]=e.target.value;saveBuild();$('#bOut').textContent=buildText()||'（先輸入主體或加入運鏡，這裡會自動組合成完整提示詞）';renderBuild2()})});
+function renderBuild2(){const b=S.build;const z=[b.sub&&'主體：'+b.sub,b.scn&&'場景：'+b.scn,b.moves.length&&'運鏡：'+b.moves.map(id=>BY[id].zh).join(' → '),b.spd&&'速度：'+$('#bSpd').selectedOptions[0].text,b.lns&&'鏡頭：'+$('#bLns').selectedOptions[0].text,b.sty&&'風格：'+$('#bSty').selectedOptions[0].text].filter(Boolean);$('#bZh').textContent=z.join('　｜　')}
+$('#bAddBtn').onclick=()=>addToBuild($('#bAddSel').value);
+$('#bList').onclick=e=>{const t=e.target.closest('[data-a]');if(!t)return;const i=+t.dataset.i,a=S.build.moves;
+  if(t.dataset.a==='rm')a.splice(i,1);else if(t.dataset.a==='up'&&i>0)[a[i-1],a[i]]=[a[i],a[i-1]];else if(t.dataset.a==='dn'&&i<a.length-1)[a[i+1],a[i]]=[a[i],a[i+1]];
+  saveBuild();renderBuild()};
+$('#bCopy').onclick=()=>{const t=buildText();if(!t){toast('還沒有內容可以複製');return}copy(t,'已複製組合提示詞')};
+$('#bReset').onclick=()=>{S.build={sub:'',scn:'',moves:[],spd:'',lns:'',sty:''};saveBuild();renderBuild()};
+
+/* ---- 比較 ---- */
+function openCompare(a,b){
+  a=a||S.cur||'dolly-in';b=b||'zoom-in';
+  if(!CMP.a){CMP.a=new Preview($('#cCvA'),{hud:false,map:true,mapScale:0.3});CMP.b=new Preview($('#cCvB'),{hud:false,map:true,mapScale:0.3});CMP.a.resize(640,360);CMP.b.resize(640,360)}
+  const opts=MOVES.map(m=>`<option value="${m.id}">${CATBY[m.cat].zh}｜${m.zh}</option>`).join('');
+  $('#cA').innerHTML=opts;$('#cB').innerHTML=opts;$('#cA').value=a;$('#cB').value=b;setCmp();
+  CMP.on=true;CMP.paused=false;$('#cPlay').textContent='暫停';
+  if(!$('#dC').open){if($('#dM').open)$('#dM').close();$('#dC').showModal();dlgOpen++}
+}
+function setCmp(){[['A',CMP.a],['B',CMP.b]].forEach(([k,p])=>{const m=BY[$('#c'+k).value];p.setMove(m);p.clock=0;$('#cP'+k).textContent=m.p;$('#cT'+k).innerHTML='<b>'+esc(m.zh)+'</b>　'+esc(m.tip)})}
+$('#cA').onchange=setCmp;$('#cB').onchange=setCmp;
+$('#cPlay').onclick=()=>{CMP.paused=!CMP.paused;$('#cPlay').textContent=CMP.paused?'播放':'暫停'};
+$('#cClose').onclick=()=>$('#dC').close();
+$('#dC').addEventListener('close',()=>{CMP.on=false;dlgOpen=Math.max(0,dlgOpen-1)});
+$('#dC').addEventListener('click',e=>{if(e.target===$('#dC'))$('#dC').close()});
+$('#bCmp').onclick=()=>openCompare('dolly-in','zoom-in');
+
+/* ---- 其他控制 ---- */
+let qt;$('#q').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;render()},160)});
+$('#fPw').onchange=e=>{S.pw=+e.target.value;render()};
+$('#fDen').value=S.den;$('#fDen').onchange=e=>{S.den=e.target.value;LS.set('cam.den',S.den);render()};
+$('#bFav').onclick=e=>{if(!S.fav.size&&!S.favOnly){toast('還沒有收藏，按卡片上的 ♥ 試試');return}S.favOnly=!S.favOnly;e.currentTarget.classList.toggle('on',S.favOnly);render()};
+function setPaused(p){S.paused=p;$('#bPlay').textContent=p?'▶ 全部播放':'❚❚ 全部暫停'}
+$('#bPlay').onclick=()=>setPaused(!S.paused);
+$('#bRand').onclick=()=>openModal(MOVES[Math.floor(Math.random()*MOVES.length)].id);
+$('#hCopy').onclick=()=>copy(hero.m.p,'已複製：'+hero.m.zh);
+$('#hOpen').onclick=()=>openModal(hero.m.id);
+$('#bTheme').onclick=()=>{const r=document.documentElement,t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;LS.set('cam.theme',t)};
+const PAIRS=[['dolly-in','zoom-in','推軌 vs 變焦'],['truck-right','pan-right','橫移 vs 橫搖'],['pedestal-up','tilt-up','升起 vs 仰搖'],['orbit-left','arc-shot','環繞 vs 弧形'],['pedestal-up','crane-up','垂直升起 vs 搖臂上升'],['low-angle','worms-eye','仰角 vs 蟲視角'],['follow-behind','lead-shot','後方跟拍 vs 前導跟拍'],['dolly-zoom','dolly-in','滑動變焦 vs 推軌']];
+$('#pairs').innerHTML=PAIRS.map((p,i)=>`<button class="btn sm" data-i="${i}">${p[2]}</button>`).join('');
+$('#pairs').onclick=e=>{const b=e.target.closest('[data-i]');if(b){const p=PAIRS[+b.dataset.i];openCompare(p[0],p[1])}};
+$('#bAddSel').innerHTML=MOVES.map(m=>`<option value="${m.id}">${CATBY[m.cat].zh}｜${m.zh}</option>`).join('');
+document.addEventListener('keydown',e=>{
+  const tag=(e.target.tagName||'').toLowerCase(),typing=tag==='input'||tag==='textarea'||tag==='select';
+  if(e.key==='/'&&!typing&&!dlgOpen){e.preventDefault();$('#q').focus();return}
+  if(typing)return;
+  if($('#dM').open){
+    if(e.key==='ArrowLeft'){step(-1)}else if(e.key==='ArrowRight'){step(1)}
+    else if(e.key===' '){e.preventDefault();$('#mPlay').click()}
+    else if(e.key==='c'||e.key==='C'){$('#mCopy').click()}
+    else if(e.key==='f'||e.key==='F'){toggleFav(S.cur)}
+  }
+});
+function fromHash(){const m=location.hash.match(/^#m=([\w-]+)/);if(m&&BY[m[1]])openModal(m[1],true)}
+window.addEventListener('hashchange',fromHash);
+
+/* ---- 啟動 ---- */
+(function init(){
+  const th=LS.get('cam.theme',null);if(th)document.documentElement.dataset.theme=th;
+  $('#sN').textContent=MOVES.length;$('#sC').textContent=CATS.length;
+  const n=S.fav.size,b=$('#fCnt');b.textContent=n;b.hidden=!n;
+  setPaused(S.paused);
+  const hc=$('#heroCv');hero.pv=new Preview(hc,{hud:true,map:true,mapScale:0.26});hero.pv.resize(800,450);hero.pv.paused=RM;
+  showHero();render();renderBuild();fromHash();requestAnimationFrame(frame);
+})();
+
+</script>
+</body></html>
